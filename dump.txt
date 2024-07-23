@@ -1,0 +1,11 @@
+       <Route element={<Categories />} path={'/category'}/>
+       <Route element={<DisplayAllCategory />} path={'/displayallcategory'}/>
+       <Route element={<Brand />} path={'/brand'}/>
+       <Route element={<DisplayAllBrands />} path={'/displayallbrands'}/>
+       <Route  element={<Subcategory/>} path={'/subcategory'}/>
+       <Route  element={<DisplayAllSubCategory/>} path={'/displayallsubcategory'}/>
+       <Route  element={<Products/>} path={'/products'}/>
+       <Route  element={<DisplayAllProducts/>} path={'/displayallproducts'}/>
+       <Route  element={<ProductDetails/>} path={'/productdetails'}/>
+       <Route  element={<DisplayAllProductDetails/>} path={'/displayallproductdetails'}/>
+       <Route  element={<Banners/>} path={'/banners'}/>

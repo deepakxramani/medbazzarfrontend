@@ -3,12 +3,32 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@material-table/core": "^6.3.0",
+    "@mui/icons-material": "^5.14.19",
+    "@mui/material": "^5.14.19",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.7",
+    "@mui/styles": "^5.14.19",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "axios": "^1.6.2",
+    "html-react-parser": "^5.1.9",
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0",
+    "react-icons": "^5.0.1",
+    "react-loading-skeleton": "^3.4.0",
+    "react-otp-input": "^3.1.1",
+    "react-quill": "^2.0.0",
+    "react-quill-emoji": "^0.1.9",
+    "react-router-dom": "^6.21.1",
     "react-scripts": "5.0.1",
+    "react-slick": "^0.30.1",
+    "redux": "^5.0.1",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^6.1.1",
+    "sweetalert2": "^11.10.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -34,5 +54,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0"
+  },
+  "proxy": "http://localhost:5000"
+  
 }
