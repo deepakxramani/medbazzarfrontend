@@ -1,5 +1,5 @@
 import axios from "axios";
-var serverURL="http://localhost:5000"
+var serverURL="https://medbazzarbackend.onrender.com"
 const postData=async(url,body)=>{
     try
     {
