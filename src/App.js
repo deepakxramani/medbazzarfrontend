@@ -1,15 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AdminLogin from "./screens/admin/AdminLogin";
 import AdminDashboard from "./screens/admin/AdminDashboard";
-// import Home from "./screens/userinterface/Home";
+import Home from './screens/userinterface/Home';
 import ProductDetailsUI from './screens/userinterface/ProductDetailsUI';
 import ProductCart from "./screens/userinterface/ProductCart";
 import LogInScreen from './screens/userinterface/LoginScreen';
 import FilterPage from './screens/userinterface/FilterPage';
 import NotFound from './screens/userinterface/NotFound'; // Add a 404 component if necessary
-function Home() {
-  return <h1>Home Page</h1>;
-}
+
 function App() {
  return (
    <Router>

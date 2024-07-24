@@ -27,7 +27,7 @@ import ShowCartProducts from "../userinterface/ShowCartProducts"
 
 export default function Header(props)
 {
-  const classes=useStyles();
+  
   const navigate=useNavigate();
   const theme = useTheme();
   var products = useSelector((state)=>state.data)
@@ -81,13 +81,13 @@ export default function Header(props)
 
   const drawerList=()=>{
     return(<Paper >
-      <div className={classes.leftBarStyle}>
+      <div style={useStyles.leftBarStyle}>
       <img src={`${serverURL}/images/1.jpg`}  style={{width:70,height:70,borderRadius:35}} alt="adminimg"/>
-        <div className={classes.nameStyle}>{userInformation?.username}</div>
-        <div className={classes.emailStyle}>{userInformation?.emailid}</div>
-        <div className={classes.phoneStyle}>{`+91${userInformation?.mobileno}`}</div>
+        <div style={useStyles.nameStyle}>{userInformation?.username}</div>
+        <div style={useStyles.emailStyle}>{userInformation?.emailid}</div>
+        <div style={useStyles.phoneStyle}>{`+91${userInformation?.mobileno}`}</div>
       </div>
-      <div className={classes.menuStyle}>
+      <div style={useStyles.menuStyle}>
         <List>
           <Divider />
           <ListItem disablePadding>
@@ -95,7 +95,7 @@ export default function Header(props)
               <ListItemIcon>
                 <DashboardIcon />
               </ListItemIcon>
-              <ListItemText primary={<span className={classes.menuItemStyle}>Dashboard</span>} />
+              <ListItemText primary={<span style={useStyles.menuItemStyle}>Dashboard</span>} />
             </ListItemButton>
           </ListItem>
 
@@ -105,7 +105,7 @@ export default function Header(props)
               <ListItemIcon>
                 <DraftsIcon />
               </ListItemIcon>
-              <ListItemText primary={<span className={classes.menuItemStyle}>Category List</span>} />
+              <ListItemText primary={<span style={useStyles.menuItemStyle}>Category List</span>} />
             </ListItemButton>
           </ListItem>
 
@@ -115,7 +115,7 @@ export default function Header(props)
               <ListItemIcon>
                 <DraftsIcon />
               </ListItemIcon>
-              <ListItemText primary={<span className={classes.menuItemStyle}>Sub Categories</span>} />
+              <ListItemText primary={<span style={useStyles.menuItemStyle}>Sub Categories</span>} />
             </ListItemButton>
           </ListItem>
 
@@ -125,7 +125,7 @@ export default function Header(props)
               <ListItemIcon>
                 <DraftsIcon />
               </ListItemIcon>
-              <ListItemText primary={<span className={classes.menuItemStyle}>Brands List</span>} />
+              <ListItemText primary={<span style={useStyles.menuItemStyle}>Brands List</span>} />
             </ListItemButton>
           </ListItem>
 
@@ -135,7 +135,7 @@ export default function Header(props)
               <ListItemIcon>
                 <DraftsIcon />
               </ListItemIcon>
-              <ListItemText primary={<span className={classes.menuItemStyle}>Products List</span>} />
+              <ListItemText primary={<span style={useStyles.menuItemStyle}>Products List</span>} />
             </ListItemButton>
           </ListItem>
 
@@ -145,7 +145,7 @@ export default function Header(props)
               <ListItemIcon>
                 <DraftsIcon />
               </ListItemIcon>
-              <ListItemText primary={<span className={classes.menuItemStyle}>ProductDetails List</span>} />
+              <ListItemText primary={<span style={useStyles.menuItemStyle}>ProductDetails List</span>} />
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
@@ -153,7 +153,7 @@ export default function Header(props)
               <ListItemIcon>
                 <DraftsIcon />
               </ListItemIcon>
-              <ListItemText primary={<span className={classes.menuItemStyle}>Banners</span>} />
+              <ListItemText primary={<span style={useStyles.menuItemStyle}>Banners</span>} />
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
@@ -161,7 +161,7 @@ export default function Header(props)
               <ListItemIcon>
                 <DraftsIcon />
               </ListItemIcon>
-              <ListItemText primary={<span className={classes.menuItemStyle}>Concern</span>} />
+              <ListItemText primary={<span style={useStyles.menuItemStyle}>Concern</span>} />
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
@@ -169,7 +169,7 @@ export default function Header(props)
               <ListItemIcon>
                 <DraftsIcon />
               </ListItemIcon>
-              <ListItemText primary={<span className={classes.menuItemStyle}>Sales Report</span>} />
+              <ListItemText primary={<span style={useStyles.menuItemStyle}>Sales Report</span>} />
             </ListItemButton>
           </ListItem>
 
@@ -180,7 +180,7 @@ export default function Header(props)
               <ListItemIcon>
                 <DraftsIcon />
               </ListItemIcon>
-              <ListItemText primary={<span className={classes.menuItemStyle}>Logout</span>} />
+              <ListItemText primary={<span style={useStyles.menuItemStyle}>Logout</span>} />
             </ListItemButton>
           </ListItem>
         </List>
