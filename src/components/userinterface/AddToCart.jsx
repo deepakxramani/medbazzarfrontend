@@ -85,7 +85,7 @@ export default function AddToCart(props){
        <Divider style={{background:'#A0ABBB',width:'90%',margin:'20px auto'}}/>
        :<></>
     }
-    <div style={{display:'inline-flex',alignItems:'center',gap:8,cursor:'pointer',fontSize:18,margin:'0px 20px'}}><Button onClick={()=>navigate('/home')} style={{fontWeight:600,color:'black'}}><AddBoxOutlinedIcon style={{marginRight:4}}/>Add more items</Button></div>
+    <div style={{display:'inline-flex',alignItems:'center',gap:8,cursor:'pointer',fontSize:18,margin:'0px 20px'}}><Button onClick={()=>navigate('/')} style={{fontWeight:600,color:'black'}}><AddBoxOutlinedIcon style={{marginRight:4}}/>Add more items</Button></div>
     {matchesMd?
         <Divider style={{background:'#A0ABBB',width:'100%',height:5,margin:'20px auto',opacity:0.3}}/>
         :<></>

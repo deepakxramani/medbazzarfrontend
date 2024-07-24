@@ -235,7 +235,7 @@ export default function Header(props)
       <Box sx={{flexGrow: 1}} onMouseLeave={hideCartDetails}>
       <AppBar style={{height: 80,background: '#fff', justifyContent: 'center'}} position={props.position}>
         <Toolbar style={{display: 'flex', justifyContent: 'space-between'}}>
-          <img src={logo} style={{width:180,cursor:'pointer'}} alt="MedBazzar Logo" onClick={()=>navigate('/home')}/>
+          <img src={logo} style={{width:180,cursor:'pointer'}} alt="MedBazzar Logo" onClick={()=>navigate('/')}/>
           {!matches?searchBarComponent():<div></div>}
           <div style={{display: 'flex',justifyContent:'space-between',width:!matches?110:50,cursor:'pointer' }}>
               {!matches?

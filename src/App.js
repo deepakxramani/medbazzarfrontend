@@ -6,7 +6,7 @@ import ProductDetailsUI from './screens/userinterface/ProductDetailsUI';
 import ProductCart from "./screens/userinterface/ProductCart";
 import LogInScreen from './screens/userinterface/LoginScreen';
 import FilterPage from './screens/userinterface/FilterPage';
-//import NotFound from './screens/userinterface/NotFound'; // Add a 404 component if necessary
+import NotFound from './screens/userinterface/NotFound'; // Add a 404 component if necessary
 
 function App() {
  return (
@@ -19,7 +19,7 @@ function App() {
        <Route path="/productcart" element={<ProductCart />} />
        <Route path="/loginscreen" element={<LogInScreen />} />
        <Route path="/filterpage" element={<FilterPage />} />
-       {/* <Route path="*" element={<NotFound />} /> //Wildcard route for 404 pages */}
+       <Route path="*" element={<NotFound />} /> //Wildcard route for 404 pages
      </Routes>
    </Router>
  );
