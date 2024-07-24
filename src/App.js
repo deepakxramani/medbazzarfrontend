@@ -19,7 +19,7 @@ function App() {
        <Route path="/productcart" element={<ProductCart />} />
        <Route path="/loginscreen" element={<LogInScreen />} />
        <Route path="/filterpage" element={<FilterPage />} />
-       <Route path="*" element={<NotFound />} /> {/* Wildcard route for 404 pages */}
+       {/* <Route path="*" element={<NotFound />} /> Wildcard route for 404 pages */}
      </Routes>
    </Router>
  );
