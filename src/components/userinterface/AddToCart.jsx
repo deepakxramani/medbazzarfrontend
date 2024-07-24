@@ -1,14 +1,13 @@
-import { Avatar,AppBar,Box,Toolbar,Typography,Grid,Paper, Button } from "@mui/material";
+import { Grid,Button } from "@mui/material";
 import WatchLaterOutlinedIcon from '@mui/icons-material/WatchLaterOutlined';import PlusMinusComp from "./PlusMinusComp";
 import useMediaQuery from '@mui/material/useMediaQuery';
 import  {useTheme}  from '@mui/material/styles';
 import Divider from '@mui/material/Divider';
 import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
 import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined';
-import { FavoriteBorderOutlined } from "@mui/icons-material";
 import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
 import { serverURL } from "../../services/FetchNodeServices";
-import {useDispatch,useSelector} from "react-redux"
+import {useDispatch} from "react-redux"
 import {useNavigate} from "react-router-dom"
 
 

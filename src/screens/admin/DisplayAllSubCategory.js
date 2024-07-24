@@ -13,8 +13,8 @@ import { useNavigate } from "react-router-dom";
 import mainLogo from '../../../src/assets/logo.png'
 
 export default function DisplayAllSubCategory(){
-      var classes=subcategoryStyle()
-      var navigate=useNavigate()
+      
+    var navigate=useNavigate()
     const [subCategoryData,setSubCategoryData]=useState([])
     const [open,setOpen]=useState(false)
     const [subCategoryId,setSubCategoryId]=useState('')
@@ -176,7 +176,7 @@ export default function DisplayAllSubCategory(){
 
       <DialogContent>
 
-          <div className={classes.box}>
+          <div style={subcategoryStyle.box}>
             <Grid container spacing={3}>
                 <Grid item xs={12}>
                     <TitleComponent title=" Edit Sub Category" listicon='list.png'/>  
@@ -238,6 +238,8 @@ export default function DisplayAllSubCategory(){
             ]}
             data={subCategoryData}
             options={{
+              headerStyle: { position: 'sticky', top: 0, background:'	#D0D0D0', zIndex:100}, 
+              maxBodyHeight: '340px',
               paging: true,
               pageSize: 3,
               emptyRowsWhenPaging: false,
@@ -266,8 +268,8 @@ export default function DisplayAllSubCategory(){
         )
       }
 
- return(<div className={classes.mainBox}>
-          <div className={classes.boxDisplay}>
+ return(<div style={subcategoryStyle.mainBox}>
+          <div style={subcategoryStyle.boxDisplay}>
             { showSubcategoryTable()}    
           </div>
             {showSubcategoryForm()}

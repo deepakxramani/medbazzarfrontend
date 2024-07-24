@@ -13,7 +13,7 @@ import Swal from "sweetalert2";
 import mainLogo from '../../../src/assets/logo.png'
 
 export default function  DisplayAllProducts(){
-    var classes=useStyles()
+    
     var navigate=useNavigate()
 
     const [productData,setProductData]=useState([])
@@ -218,7 +218,7 @@ export default function  DisplayAllProducts(){
          close={handleClose}
          maxWidth={"md"}>
           <DialogContent>
-          <div className={classes.box}>
+          <div style={useStyles.box}>
            <Grid container spacing={3}>
             <Grid item  xs={12}>
                 <TitleComponent title="Edit Product" logo="logo.png" listicon="list.png" />
@@ -321,6 +321,8 @@ export default function  DisplayAllProducts(){
             ]}
             data={productData}
             options={{
+              headerStyle: { position: 'sticky', top: 0, background:'	#D0D0D0', zIndex:100}, 
+              maxBodyHeight: '340px',
               paging: true,
               pageSize: 3,
               emptyRowsWhenPaging: false,
@@ -352,8 +354,8 @@ export default function  DisplayAllProducts(){
       }
 
     
-    return(<div className={classes.root}>
-        <div className={classes.boxDisplay} style={{ maxHeight: '500px', overflowY: 'auto', }} >
+    return(<div style={useStyles.root}>
+        <div style={useStyles.boxDisplay}  >
         {ShowAllProducts()}
             
         </div>

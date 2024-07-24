@@ -1,6 +1,4 @@
-import makeStyles from '@mui/styles/makeStyles';
-
-export const subcategoryStyle=makeStyles({
+export const subcategoryStyle=({
     mainBox:{
         display:'flex',
         width:'100%',

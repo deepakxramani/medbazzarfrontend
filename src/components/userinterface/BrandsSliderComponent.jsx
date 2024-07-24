@@ -4,7 +4,6 @@ import 'slick-carousel/slick/slick-theme.css';
 import { serverURL, getData, postData } from '../../services/FetchNodeServices';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import { useState, useEffect } from 'react';
 import Paper from '@mui/material/Paper';
 import { createRef } from 'react';
 import Skeleton from 'react-loading-skeleton'

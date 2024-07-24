@@ -18,10 +18,9 @@ import ClearIcon from '@mui/icons-material/Clear';
 
 
 export default function DisplayAllProductDetails(){
-    var classes=useStyles()
+    
     var navigate=useNavigate()
 
-    var classes = useStyles();
     const [picture, setPicture]=useState({file: 'productdetaillogo.png', bytes:''})
     const [error, setError]=useState({})
     const [productDetailId, setProductDetailId]=useState([])
@@ -48,8 +47,6 @@ export default function DisplayAllProductDetails(){
     const [open,setOpen]=useState(false)
     const [showBtn,setShowBtn]=useState(false)
     const [tempPicture,setTempPicture]=useState('')
-
-
 
     const fetchAllCategory = async () => {
         var result = await getData('category/display_all_category');
@@ -281,7 +278,7 @@ export default function DisplayAllProductDetails(){
             close={handleClose}
             maxWidth={"md"}>
             <DialogContent>
-          <div className={classes.boxDisplayPD}>
+          <div style={useStyles.boxDisplayPD}>
           <Grid container spacing={3}>
                 <Grid item xs={12}>
                     <TitleComponent title="Insert Product Details" logo="logo.png" listicon="list.png" page='/displayallproductdeatils' />
@@ -534,12 +531,12 @@ export default function DisplayAllProductDetails(){
               }
             ]}
             options={{ 
-                headerStyle: { position: 'sticky', top: 0, background:'	#D0D0D0'}, 
-                maxBodyHeight: '500px',
-                paging: true,
-                pageSize: 3,
-                emptyRowsWhenPaging: false,
-                pageSizeOptions: [3,5,7,10],
+              headerStyle: { position: 'sticky', top: 0, background:'	#D0D0D0', zIndex:100}, 
+              maxBodyHeight: '400px',
+              paging: true,
+              pageSize: 3,
+              emptyRowsWhenPaging: false,
+              pageSizeOptions: [3,5,7,10],
             }}
             
             
@@ -548,8 +545,8 @@ export default function DisplayAllProductDetails(){
       }
 
     
-    return(<div className={classes.root}>
-        <div className={classes.boxDisplay} >
+    return(<div style={useStyles.root}>
+        <div style={useStyles.boxDisplay} >
         {ShowAllProductDetails()}
             
         </div>

@@ -6,7 +6,7 @@ import { postData } from "../../services/FetchNodeServices";
 import Swal from "sweetalert2"
 
 export default function Concern()
-{  var classes = useStyles()
+{  
     const [concern,setConcern]=useState('')
     const [picture,setPicture]=useState({file:'medicon.png', bytes:''})
     const [error,setError]=useState({})
@@ -61,8 +61,8 @@ export default function Concern()
               });
         }
     }
-    return(<div className={classes.root}>
-        <div className={classes.box}>
+    return(<div style={useStyles.root}>
+        <div style={useStyles.box}>
             <Grid container spacing={3}>
                 <Grid item xs={12}>
                 <TitleComponent title="Add New Concern" logo="logo.png" listicon="list.png" page='/admindashboard/displayallconcerns' />

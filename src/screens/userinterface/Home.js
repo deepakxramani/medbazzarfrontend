@@ -4,12 +4,8 @@ import BrandsSliderComponent from "../../components/userinterface/BrandsSliderCo
 import CategoriesSliderComponent from "../../components/userinterface/CategoriesSliderComponent"
 import ProductCard from "../../components/userinterface/ProductCard"
 import FooterComponent from "../../components/userinterface/FooterComponent"
-import { postData, serverURL, getData } from "../../services/FetchNodeServices"
-import ProductPicture from "../../components/userinterface/ProductPicture"
-import ProductDetails from "./ProductDetailsUI"
-import PlusMinusComp from "../../components/userinterface/PlusMinusComp"
+import { postData,getData } from "../../services/FetchNodeServices"
 import { useState,useEffect } from "react"
-import ProductCard2 from "../../components/userinterface/ProductCard2"
 import ConcernSlider from "../../components/userinterface/ConcernSlider"
 import useMediaQuery from '@mui/material/useMediaQuery';
 import  {useTheme}  from '@mui/material/styles';

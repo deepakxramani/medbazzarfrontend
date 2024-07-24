@@ -1,6 +1,5 @@
-import { makeStyles } from "@mui/styles";
 
-export const useStyles = makeStyles({
+export const useStyles = ({
   root: {
     width:"auto",
     height:"100vh",

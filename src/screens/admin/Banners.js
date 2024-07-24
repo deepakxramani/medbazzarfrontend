@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import {Button, Grid, TextField,Avatar} from "@mui/material"
+import {Button, Grid,Avatar} from "@mui/material"
 import {FormControl,Select,MenuItem,InputLabel} from '@mui/material'
 import { useStyles } from "./CategoriesCss";
 import TitleComponent from "../../components/admin/TitleComponent";
@@ -9,7 +9,7 @@ import { postData, getData } from "../../services/FetchNodeServices";
 import Swal from "sweetalert2"
 
 export default function Banners()
-{  var classes = useStyles()
+{  
     const [bannerType,setBannerType]=useState('')
     const [brandId,setBrandId]=useState('')
     const [brandList,setBrandList]=useState([])
@@ -60,14 +60,15 @@ export default function Banners()
             setPicture([])            
             submit=false
         }
-        if(submit)
-        {   var formData = new FormData()
-            formData.append('bannertype',bannerType)
-            formData.append('brandid',brandId)
-            picture.file.map((item,i)=>{
-                formData.append('picture'+i,item)
-    
-                })
+        if (submit) {   
+            var formData = new FormData();
+            formData.append('bannertype', bannerType);
+            formData.append('brandid', brandId);
+        
+            picture?.file?.forEach((item, i) => {
+                formData.append('picture' + i, item);
+            });
+        
             
             var result=await postData('banner/submit_banner_details',formData)
             // console.log(result.status)
@@ -119,8 +120,8 @@ export default function Banners()
         }): null
 
     }
-    return(<div className={classes.root}>
-        <div className={classes.box} style={{width:800}}>
+    return(<div style={useStyles.root}>
+        <div style={useStyles.bannerBox}  >
             <Grid container spacing={3}>
                 <Grid item xs={12}>
                     <TitleComponent title="Add Banners" logo="logo.png" listicon="list.png" page='/displayallcategory' />

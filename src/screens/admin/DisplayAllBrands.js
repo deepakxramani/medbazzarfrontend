@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 import mainLogo from '../../../src/assets/logo.png'
 
 export default function DisplayAllBrands(){
-    var classes=brandStyles()
+    
     var navigate=useNavigate()
     
     const [brandData,setBrandData]=useState([])
@@ -168,7 +168,7 @@ export default function DisplayAllBrands(){
      maxWidth={'md'}>
       
       <DialogContent>
-      <div className={classes.box}>
+      <div style={brandStyles.box}>
             <Grid container spacing={3}>
                 <Grid item xs={12}>
                     <TitleComponent title="Edit Brands" listicon="list.png" logo="logo.png" />
@@ -191,11 +191,7 @@ export default function DisplayAllBrands(){
                 <Grid item xs={6} style={{display:'flex',justifyContent:'center'}} >
                    <Avatar  src={picture.file} variant="rounded" style={{width:100,height:100}} />
                 </Grid>
-
-                
-
             </Grid>
-
         </div>
       </DialogContent>
       <DialogActions>
@@ -218,6 +214,8 @@ export default function DisplayAllBrands(){
             ]}
             data={brandData}
             options={{
+              headerStyle: { position: 'sticky', top: 0, background:'	#D0D0D0', zIndex:100}, 
+              maxBodyHeight: '340px',
               paging: true,
               pageSize: 3,
               emptyRowsWhenPaging: false,
@@ -247,8 +245,8 @@ export default function DisplayAllBrands(){
       }
 
 
-return(<div className={classes.mainBox}>
-    <div className={classes.boxDisplay}>
+return(<div style={brandStyles.mainBox}>
+    <div style={brandStyles.boxDisplay}>
         {ShowBrand()}
     </div>
     {showBrandForm()}

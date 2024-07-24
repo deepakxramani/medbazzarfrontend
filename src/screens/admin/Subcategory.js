@@ -7,8 +7,7 @@ import { postData, getData } from "../../services/FetchNodeServices";
 import Swal from "sweetalert2";
 
 export default function Subcategory(props){
-    var classes=subcategoryStyle()
-    
+  
     const [picture,setPicture]=useState({file:'subcategory.png',bytes:''})
     const [error,setError]=useState({})
     const [categoryId,setCategoryId]=useState('')
@@ -94,8 +93,8 @@ export default function Subcategory(props){
         setSubCategory('')
     }
     
-    return(<div className={classes.mainBox}>
-        <div className={classes.box}>
+    return(<div style={subcategoryStyle.mainBox}>
+        <div style={subcategoryStyle.box}>
             <Grid container spacing={3}>
 
                 <Grid item xs={12}>

@@ -1,6 +1,4 @@
-import makeStyles from '@mui/styles/makeStyles';
-
-export const useStyles = makeStyles(() => ({
+export const useStyles = ({
     root: {
         display: 'flex',
         width: '100%',
@@ -25,6 +23,8 @@ export const useStyles = makeStyles(() => ({
         borderRadius: 10,
         padding: 10,
         boxShadow: '0 0 4px 5px rgba(0,0,0,0.1)',
+        maxHeight: '500px', 
+        overflowY: 'auto'
     },
     boxDisplayPD: {
         width: 'auto',
@@ -34,4 +34,4 @@ export const useStyles = makeStyles(() => ({
         padding: 10,
         boxShadow: '0 0 4px 5px rgba(0,0,0,0.1)',
     }
-}))
+})

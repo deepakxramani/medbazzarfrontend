@@ -6,7 +6,7 @@ import { postData } from "../../services/FetchNodeServices";
 import Swal from "sweetalert2"
 
 export default function Categories()
-{  var classes = useStyles()
+{  
     const [category,setCategory]=useState('')
     const [picture,setPicture]=useState({file:'medicon.png', bytes:''})
     const [error,setError]=useState({})
@@ -65,8 +65,8 @@ export default function Categories()
               });
         }
     }
-    return(<div className={classes.root}>
-        <div className={classes.box}>
+    return(<div style={useStyles.root}>
+        <div style={useStyles.box}>
             <Grid container spacing={3}>
                 <Grid item xs={12}>
                 <TitleComponent title="Add New Category" logo="logo.png" listicon="list.png" page='/admindashboard/displayallcategory' />
@@ -99,10 +99,6 @@ export default function Categories()
                     Reset
                 </Button>
                 </Grid>
-                 
-                 
-
-
             </Grid>
         </div>
     </div>)

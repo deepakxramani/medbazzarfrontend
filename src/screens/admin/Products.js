@@ -7,7 +7,7 @@ import { postData, getData } from "../../services/FetchNodeServices";
 import Swal from "sweetalert2";
 
 export default function Products(){
-    var classes = useStyles();
+    
     const [picture,setPicture]=useState({file:'producticon.png', bytes:''})
     const [error,setError]=useState({})
     const [product,setProduct]=useState('')
@@ -168,8 +168,8 @@ export default function Products(){
         }
     }
 
-    return(<div className={classes.root}>
-        <div className={classes.box}>
+    return(<div style={useStyles.root}>
+        <div style={useStyles.box}>
             <Grid container spacing={3}>
                 <Grid item xs={12}>
                     <TitleComponent title="Add New Product" logo="logo.png" listicon="list.png" page='/admindashboard/displayallproducts' />

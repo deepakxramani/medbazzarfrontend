@@ -1,5 +1,4 @@
-import makeStyles from '@mui/styles/makeStyles';
-export const brandStyles = makeStyles({
+export const brandStyles = ({
     mainBox:{
         display:'flex',
         width:'100%',
@@ -24,6 +23,8 @@ export const brandStyles = makeStyles({
         background:'#fff',
         borderRadius:10,
         padding:10,
+        maxHeight: '500px', 
+        overflowY: 'auto'
 
     }
 })

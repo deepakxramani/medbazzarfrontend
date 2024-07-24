@@ -12,7 +12,7 @@ import { Button,Grid,TextField,Avatar } from "@mui/material";
 import mainLogo from '../../../src/assets/logo.png'
 
 export default function DisplayAllCategory(){
-    var classes=useStyles()
+    
     var navigate=useNavigate()
     const [categoryData,setCategoryData]=useState([])
 
@@ -138,19 +138,6 @@ export default function DisplayAllCategory(){
             Swal.fire({toast:true,title:"Your Record is safe", icon:"info"});
           }
         });
-      
-      
-      
-      
-      
-      
-        
-   
-     
-  
-   
-  
-
      } 
 
 
@@ -189,7 +176,7 @@ export default function DisplayAllCategory(){
       >
        
       <DialogContent >
-      <div className={classes.box}>
+      <div style={useStyles.box}>
           <Grid container spacing={3}>
             <Grid item xs={12}>
             <TitleComponent title="Edit Category Data" logo="logo.png" listicon="list.png"/>
@@ -244,6 +231,8 @@ export default function DisplayAllCategory(){
             ]}
             data={categoryData}  
             options={{
+              headerStyle: { position: 'sticky', top: 0, background:'	#D0D0D0', zIndex:100}, 
+              maxBodyHeight: '340px',
               paging: true,
               pageSize: 3,
               emptyRowsWhenPaging: false,
@@ -272,8 +261,8 @@ export default function DisplayAllCategory(){
         )
       }
 
-  return(<div className={classes.root}>
-    <div className={classes.boxDisplay}>
+  return(<div style={useStyles.root}>
+    <div style={useStyles.boxDisplay}>
     {showCategory()}
   </div>
   {showCategoryForm()}

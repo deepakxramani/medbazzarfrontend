@@ -11,8 +11,7 @@ import { useMemo } from "react";
 import ClearIcon from '@mui/icons-material/Clear';
 
 export default function ProductDetails(){
-    var classes = useStyles();
-
+    
     const modules = useMemo(() => ({
         toolbar: {
           container: [
@@ -311,7 +310,7 @@ export default function ProductDetails(){
             formData.append('price', price)
             formData.append('offerprice', offerPrice)
             formData.append('offertype', offerType)
-            picture.file.map((item,i)=>{
+            picture?.file?.forEach((item,i)=>{
             formData.append('picture'+i,item)
 
             })
@@ -351,9 +350,10 @@ export default function ProductDetails(){
         setPicture({ ...picture, file: newFileArray });
       };
 
-      useEffect(function(){showImages()},[])
-    return(<div className={classes.root}>
-        <div className={classes.box}>
+      useEffect(function(){showImages()})
+
+    return(<div style={useStyles.root}>
+        <div style={useStyles.box}>
             <Grid container spacing={3}>
                 <Grid item xs={12}>
                     <TitleComponent title="Insert Product Details" logo="logo.png" listicon="list.png" page='/admindashboard/displayallproductdetails' />

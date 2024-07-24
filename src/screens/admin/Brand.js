@@ -1,13 +1,13 @@
 import TitleComponent from "../../components/admin/TitleComponent"
 import { postData } from "../../services/FetchNodeServices"
-import { brandStyles } from "./BrandCss"
+import  { brandStyles }  from "./BrandCss"
 import { Grid,Button,TextField,Avatar } from "@mui/material"
 import { useState } from "react"
 import Swal from "sweetalert2"
 
 
 export default function Brand(props){
-    var classes=brandStyles()
+    
     
     const [brand,setBrand]=useState('')
     const [error,setError]=useState({})
@@ -74,8 +74,8 @@ export default function Brand(props){
 
 
 
-    return(<div className={classes.mainBox}>
-        <div className={classes.box}>
+    return(<div style={brandStyles.mainBox}>
+        <div style={brandStyles.box}>
             <Grid container spacing={3}>
                 <Grid item xs={12}>
                     <TitleComponent logo="logo.png" title="Add New Brands" listicon='list.png' page="/admindashboard/displayallbrands" />
