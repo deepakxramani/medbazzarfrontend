@@ -16,9 +16,9 @@ export default function ProductDetailUI(){
     // alert(JSON.stringify(item))
 
     var theme=useTheme();
-    const matchesMd = useMediaQuery(theme.breakpoints.up('md'));
+    
     const matchesSM = useMediaQuery(theme.breakpoints.up('sm'));
-    const matchesXS = useMediaQuery(theme.breakpoints.down('xs'));
+    
 
     return(
     <div>

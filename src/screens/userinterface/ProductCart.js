@@ -21,11 +21,11 @@ export default function ProductCart(){
 
     const check_user_address=async()=>{
         
-        if(userData?.mobileno==undefined)
+        if(userData?.mobileno===undefined)
         {setStatus(false)}
         else{
         var result=await postData('users/check_user_address',{mobileno:userData?.mobileno})
-        if(result.status==false)
+        if(result.status===false)
         { 
             setStatus(true)
         }

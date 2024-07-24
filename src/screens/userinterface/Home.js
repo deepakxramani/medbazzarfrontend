@@ -25,7 +25,6 @@ export default function Home()
     var theme=useTheme();
     const matchesMd = useMediaQuery(theme.breakpoints.down('md'));
     const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
-    const matchesXS = useMediaQuery(theme.breakpoints.down('xs'));
 
     const fetchAllBanners=async()=>{
         var result=await postData('userinterface/show_all_banners',{bannertype:'General'})
@@ -60,7 +59,7 @@ export default function Home()
         fetchAllCategory()
         fetchAllProductDetails('deal of the day!')
         fetchAllConcerns()
-    },[])
+    })
 
     return(<div style={{fontFamily:'Kanit, sans-serif'}}>
 
