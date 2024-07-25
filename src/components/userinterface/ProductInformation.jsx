@@ -13,7 +13,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import parse from 'html-react-parser';
 import {useDispatch,useSelector} from 'react-redux';
-import PlusMinusComp from "./PlusMinusComp";
+import PlusMinusComp3 from "./PlusMinusComp3";
 
 
 
@@ -142,7 +142,7 @@ export default function ProductInformation(props){
                 </Grid>
                 <Grid item xs={12}>
                     <div style={{display:'flex', gap:40,padding:'15px 0px'}}>
-                    <PlusMinusComp  qty={product?.qty} onChange={(v)=>handleChange(v,product)} width={200} height={50} fontSize={18} margin={'0px 10px'} />
+                    <PlusMinusComp3  qty={product?.qty} onChange={(v)=>handleChange(v,product)} width={200} height={50} fontSize={18} margin={'0px 10px'} />
                     <button onClick={()=>navigate('/')} style={{display:'inline-flex', alignItems:'center', justifyContent:'center',width: matchesSM?'100px':'200px', height: matchesSM?'40px':'50px', padding:'10px 15px', gap:10, fontSize: matchesSM?12:15, fontWeight:600,color:'#fff',background:'#228B22',border:'none',borderRadius:10, cursor:'pointer'}}>CONTINUE {matchesSM?'':'SHOPPING'}<LocalMallIcon style={{color:'#fff',fontSize:matchesSM?15:18}}/></button>
                     </div>
                 </Grid>
