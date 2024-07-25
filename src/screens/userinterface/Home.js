@@ -44,13 +44,13 @@ export default function Home()
     const fetchAllProductDetails=async(offertype)=>{
         var result=await postData('userinterface/display_all_product_details_by_offer',{offertype:offertype})
         setProductListByOffer(result.data)
-        console.log(result.data)
+        // console.log(result.data)
     }
 
     const fetchAllConcerns=async()=>{
         var result=await getData('userinterface/display_all_concerns')
         setConcernList(result.data)
-        console.log(result.data)
+        // console.log(result.data)
     }
 
     useEffect(function(){

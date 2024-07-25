@@ -136,9 +136,8 @@ export default function DisplayAllConcerns(){
 
     const fetchAllConcern=async()=>{
     var result=await getData('concern/display_all_concerns')
-    console.log('DAAATTAAA',result.data)
-    if(result.status)
-    { setConcernData(result.data)}
+    if(result?.status)
+    { setConcernData(result?.data)}
     
     }
     useEffect(function(){

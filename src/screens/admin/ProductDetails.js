@@ -82,7 +82,7 @@ export default function ProductDetails(){
             console.log(cid)
             var result = await postData('subcategory/fetch_all_subcategory_by_categoryid',{categoryid:cid});
             if (result && result.status) {
-                console.log(result.data)
+                // console.log(result.data)
                 setSubCategoryList(result.data);
             }
         } catch (error) {
@@ -94,7 +94,7 @@ export default function ProductDetails(){
 
     const fillAllSubCategory=()=>{
         return  subCategoryList.map((item)=>{
-            console.log(item)
+            // console.log(item)
             return <MenuItem key={item.subcategoryid} value={item.subcategoryid} >{item.subcategoryname}</MenuItem>
         })
     }

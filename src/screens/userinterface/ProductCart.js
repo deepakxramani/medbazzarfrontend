@@ -17,7 +17,7 @@ export default function ProductCart(){
     var products = useSelector(state=>state.data)
     var userData = Object.values(useSelector(state=>state.user))[0]
 
-    console.log("User Data:", userData)
+    // console.log("User Data:", userData)
 
     const check_user_address=async()=>{
         

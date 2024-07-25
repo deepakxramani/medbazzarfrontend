@@ -17,8 +17,8 @@ export default function SliderComponent(props) {
   const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
   const matchesXS = useMediaQuery(theme.breakpoints.down('xs'));
 
-  var banners = props?.data
-  var images = Object.values(banners)[0]?.picture.split(',');
+  var banners = props?.data || {}
+  var images = Object.values(banners)[0]?.picture?.split(',');
   const showSlide = () => {
     return images?.map((item) => {
       return (

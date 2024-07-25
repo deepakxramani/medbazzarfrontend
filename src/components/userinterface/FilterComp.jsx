@@ -16,7 +16,7 @@ export default function FilterComp(){
 
     const fetchAllCategory=async()=>{
         var result=await getData('userinterface/display_all_category')
-        console.log('DAAATTAAA',result.data)
+        // console.log('DAAATTAAA',result.data)
         if(result.status)
         {   
             console.log("CATEGORY DATA",result.data)

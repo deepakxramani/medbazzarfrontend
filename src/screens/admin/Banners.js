@@ -22,7 +22,7 @@ export default function Banners()
     const handleReset=()=>{
         
         setPicture({file:[],bytes:''})
-        console.log(picture.file)
+        // console.log(picture.file)
     }
     const fetchAllBrands=async()=>{
         var result=await getData('brands/display_all_brands')
@@ -96,7 +96,7 @@ export default function Banners()
 
     const handlePicture=(event)=>{
         // alert(JSON.stringify(event.target.files))
-        console.log(event.target.files)
+        // console.log(event.target.files)
 
         if(Object.values(event.target.files).length>=5)
         {

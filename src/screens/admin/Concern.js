@@ -39,7 +39,7 @@ export default function Concern()
             formData.append('concernname',concern)
             formData.append('picture',picture.bytes)
             var result=await postData('concern/submit_concern_details',formData)
-            console.log(result.status)
+            // console.log(result.status)
             
         }
         if(result.status)

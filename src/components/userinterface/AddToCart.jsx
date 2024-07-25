@@ -59,7 +59,7 @@ export default function AddToCart(props){
                      <div style={{display:'flex', alignItems:'center',margin:'6px 0px,',fontSize:matchesMd?12:15}}><WatchLaterOutlinedIcon style={{fontSize:matchesMd?12:15, marginRight:3,marginTop:2,color:'red'}}/>Delivery within <span style={{marginLeft:3,fontWeight:600}}>1-3 days</span></div>
                  </Grid>
                  <Grid item xs={3} style={{position:'absolute',right:20,top:15,margin:'10x auto'}}>
-                     <div style={{}}><PlusMinusComp qty={item.qty} onChange={(v)=>handleChange(v,item)} /></div>
+                     <div style={{}}><PlusMinusComp width={100} height={30} qty={item.qty} onChange={(v)=>handleChange(v,item)} /></div>
                  </Grid>
              </Grid>
              <Divider style={{background:'#A0ABBB',width:'93%',margin:'15px 0px'}}/>

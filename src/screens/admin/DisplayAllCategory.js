@@ -143,7 +143,7 @@ export default function DisplayAllCategory(){
 
     const fetchAllCategory=async()=>{
     var result=await getData('category/display_all_category')
-    console.log('DAAATTAAA',result.data)
+    // console.log('DAAATTAAA',result.data)
     if(result.status)
     { setCategoryData(result.data)}
     

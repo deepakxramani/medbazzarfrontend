@@ -16,7 +16,7 @@ export default function MenuBar(){
             console.log(cid)
             var result = await postData('userinterface/fetch_all_subcategory_by_categoryid',{categoryid:cid});
             if (result && result.status) {
-                console.log(result.data)
+                // console.log(result.data)
                 setSubCategoryList(result.data);
             }
         } catch (error) {
@@ -36,7 +36,7 @@ export default function MenuBar(){
       };
     const fetchAllCategory=async()=>{
         var result=await getData('userinterface/display_all_category')
-        console.log('DAAATTAAA',result.data)
+        // console.log('DAAATTAAA',result.data)
         if(result.status)
         { 
             setCategoryList(result.data)
