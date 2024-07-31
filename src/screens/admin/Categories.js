@@ -69,7 +69,7 @@ export default function Categories()
         <div style={useStyles.box}>
             <Grid container spacing={3}>
                 <Grid item xs={12}>
-                <TitleComponent title="Add New Category" logo="logo.png" listicon="list.png" page='/admindashboard/displayallcategory' />
+                <TitleComponent title="Add New Category" logo="logo2.png" listicon="list.png" page='/admindashboard/displayallcategory' />
                 </Grid>
 
                 <Grid item xs={12}>

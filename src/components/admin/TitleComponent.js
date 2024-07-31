@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import mainLogo from "../../../src/assets/logo.png"
+import mainLogo from "../../../src/assets/logo2.png"
 import listLogo from "../../../src/assets/list.png"
 
 export default function TitleComponent({title,logo,listicon,page})

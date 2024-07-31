@@ -65,7 +65,7 @@ export default function Concern()
         <div style={useStyles.box}>
             <Grid container spacing={3}>
                 <Grid item xs={12}>
-                <TitleComponent title="Add New Concern" logo="logo.png" listicon="list.png" page='/admindashboard/displayallconcerns' />
+                <TitleComponent title="Add New Concern" logo="logo2.png" listicon="list.png" page='/admindashboard/displayallconcerns' />
                 </Grid>
 
                 <Grid item xs={12}>

@@ -24,6 +24,7 @@ import DisplayAllProductDetails from './DisplayAllProductDetails';
 import Concern from './Concern';
 import Banners from './Banners';
 import DisplayAllConcerns from './DisplayAllConcern';
+import logo2 from '../../assets/logo2.png'
 
 //import Summary from "./Summary";
 //import Chart from "../../components/DashboardComponent/Chart";
@@ -34,17 +35,17 @@ export default function AdminDashboard(props) {
   const adminData = JSON.parse(localStorage.getItem('ADMIN'));
 
   const handleVisit = () => {
-    navigate('/home');
+    navigate('/');
   };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="sticky">
+      <AppBar position="sticky" style={{background: '#000'}}>
         <Toolbar
           variant="dense"
           style={{ display: 'flex', justifyContent: 'space-between' }}
         >
-          <Typography variant="h6" color="inherit" component="div">
+          <Typography variant="h5" color="inherit" component="div">
             MedBazzar
           </Typography>
           <Typography

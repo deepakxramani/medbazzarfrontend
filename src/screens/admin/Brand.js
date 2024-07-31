@@ -78,7 +78,7 @@ export default function Brand(props){
         <div style={brandStyles.box}>
             <Grid container spacing={3}>
                 <Grid item xs={12}>
-                    <TitleComponent logo="logo.png" title="Add New Brands" listicon='list.png' page="/admindashboard/displayallbrands" />
+                    <TitleComponent logo="logo2.png" title="Add New Brands" listicon='list.png' page="/admindashboard/displayallbrands" />
                 </Grid>
 
                 <Grid item xs={12}>

@@ -10,7 +10,7 @@ import DialogContent from '@mui/material/DialogContent';
 import { Button,Grid,Avatar,TextField } from "@mui/material"
 import {FormControl,MenuItem,Select,InputLabel} from '@mui/material';
 import Swal from "sweetalert2";
-import mainLogo from '../../../src/assets/logo.png'
+import mainLogo from '../../../src/assets/logo2.png'
 
 export default function  DisplayAllProducts(){
     

@@ -12,7 +12,7 @@ import {FormControl,MenuItem,Select,InputLabel} from '@mui/material';
 import Swal from "sweetalert2";
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import mainLogo from '../../../src/assets/logo.png'
+import mainLogo from '../../../src/assets/logo2.png'
 import ClearIcon from '@mui/icons-material/Clear';
 
 

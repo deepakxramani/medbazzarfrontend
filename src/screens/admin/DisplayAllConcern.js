@@ -9,7 +9,7 @@ import TitleComponent from "../../components/admin/TitleComponent";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import { Button,Grid,TextField,Avatar } from "@mui/material";
-import mainLogo from '../../../src/assets/logo.png'
+import mainLogo from '../../../src/assets/logo2.png'
 
 export default function DisplayAllConcerns(){
     
