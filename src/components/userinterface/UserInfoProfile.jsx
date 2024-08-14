@@ -132,7 +132,7 @@ const handlePicture = async (event) => {
                 placement="top"
               >
                 <Button style={{borderRadius: '50%', width:100, height:100}} component="label">
-                    <Avatar src={picture.file} style={{width: 100, height: 100}} onClick={handlePicture}>
+                    <Avatar src={picture.file} style={{width: 100, height: 100, border: '4px solid black'}} onClick={handlePicture}>
 
                     </Avatar>
                     <input onChange={handlePicture} type="file" hidden accept="images/*" />

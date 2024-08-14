@@ -298,7 +298,7 @@ export default function Header(props) {
                   flexDirection: 'column',
                 }}
               > 
-                {userData?<Avatar src={picture.file} style={{width:40,height:40}} onClick={()=> navigate('/userprofile')}></Avatar>:
+                {userData?<Avatar src={picture.file} style={{width:40,height:40, border: '2px solid black'}} onClick={()=> navigate('/userprofile')}></Avatar>:
                   <PersonOutlineOutlinedIcon
                     onClick={() => navigate('/loginscreen')}
                     style={{ fontSize: 32, color: '#000' }}
@@ -377,7 +377,7 @@ export default function Header(props) {
                     flexDirection: 'column',
                     marginRight: 15,
                   }}
-                > {userData?<Avatar src={picture.file} style={{width:40,height:40}} onClick={()=> navigate('/userprofile')}></Avatar>:
+                > {userData?<Avatar src={picture.file} style={{width:40,height:40, border: '2px solid black'}} onClick={()=> navigate('/userprofile')}></Avatar>:
                   <PersonOutlineOutlinedIcon
                     onClick={() => navigate('/loginscreen')}
                     style={{ fontSize: 32, color: '#000' }}
