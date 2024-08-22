@@ -20,10 +20,10 @@ export default function SliderComponent(props) {
   var banners = props?.data || {}
   var images = Object.values(banners)[0]?.picture?.split(',');
   const showSlide = () => {
-    return images?.map((item) => {
+    return images?.map((item,i) => {
       return (
         
-        <div>
+        <div key={i}>
           <img
             src={`${serverURL}/images/${item}`}
             style={{
@@ -92,11 +92,11 @@ export default function SliderComponent(props) {
 
   return (
     <div style={{ width: '85%', position: 'relative',marginTop:matchesSM?160:100 }}>
-        <div style={{position:'absolute',top: '40%',display:matchesSM?'none':'flex',alignItems:'center',justifyContent:'center',width:40,height:40, borderRadius:20,background:'#95a5a6', opacity:0.6, zIndex:1}}>
+        <div style={{position:'absolute',top: '40%',display:matchesSM?'none':'flex',alignItems:'center',justifyContent:'center',width:40,height:40, borderRadius:20,background:'#95a5a6', opacity:0.6, zIndex:1, cursor: 'pointer'}}>
             <ArrowBackIosIcon onClick={handleForward} />
         </div>
             <Slider ref={sld} {...settings}>{showSlide()}</Slider>
-        <div style={{position:'absolute',top:'40%',right: '0.07%',display:matchesSM?'none':'flex',alignItems:'center',justifyContent:'center',width:40,height:40, borderRadius:20,background:'#95a5a6', opacity:0.6, zIndex:1}}>
+        <div style={{position:'absolute',top:'40%',right: '0.07%',display:matchesSM?'none':'flex',alignItems:'center',justifyContent:'center',width:40,height:40, borderRadius:20,background:'#95a5a6', opacity:0.6, zIndex:1, cursor: 'pointer'}}>
             <ArrowForwardIosIcon onClick={handleBackward}/>
         </div>
     </div>

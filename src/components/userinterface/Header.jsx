@@ -34,10 +34,20 @@ import { postData, serverURL } from '../../services/FetchNodeServices';
 import { useSelector } from 'react-redux';
 import ShowCartProducts from '../userinterface/ShowCartProducts';
 import Swal from 'sweetalert2';
+import Cookies from 'js-cookie'
 
 export default function Header(props) {
   const navigate = useNavigate();
   const theme = useTheme();
+
+  // try{
+  //   var prd = JSON.parse(Cookies.get('CART'))
+  // }
+  // catch
+  // {
+  //   prd = {}
+  // }
+
   var products = useSelector((state) => state.data);
   var keys = Object?.keys(products);
 
@@ -60,6 +70,7 @@ export default function Header(props) {
 
   const matches = useMediaQuery(theme.breakpoints.down('sm'));
   const matchesSM = useMediaQuery(theme.breakpoints.up('sm'));
+
 
   const handleDrawer = () => {
     setStatus(true);
@@ -334,8 +345,8 @@ export default function Header(props) {
           inputProps={{ 'aria-label': 'search google maps' }}
           onChange={(e) => setPattern(e.target.value)}
         />
-        <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
-          <SearchOutlinedIcon onClick={handleFilterPage} />
+        <IconButton type="button" sx={{ p: '10px' }} aria-label="search" onClick={handleFilterPage}>
+          <SearchOutlinedIcon  />
         </IconButton>
       </Paper>
     );

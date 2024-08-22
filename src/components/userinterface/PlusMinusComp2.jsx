@@ -5,6 +5,7 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import { useEffect, useState } from "react";
 import useMediaQuery from '@mui/material/useMediaQuery';
 import  {useTheme}  from '@mui/material/styles';
+import Swal from "sweetalert2";
 
 
 export default function PlusMinusComp2(props){
@@ -25,17 +26,39 @@ export default function PlusMinusComp2(props){
         var v=value
         v=v-1
         props.onChange(v)}
+        Swal.fire({
+            position: "bottom-end",
+            icon: "success",
+            title: "Removed from the cart!",
+            showConfirmButton: false,
+            timer: 1500,
+            toast: true,
+            background: '#00391c',
+            color: '#fff'
+          });
     }
     const handlePlus=()=>{
         setValue((prev)=>prev+1)
         var v=value
         v=v+1
         props.onChange(v)
+        Swal.fire({
+            position: "bottom-end",
+            icon: "success",
+            title: "Added to cart!",
+            showConfirmButton: false,
+            timer: 1500,
+            toast: true,
+            background: '#00391c',
+            border: '2px solid black',
+            color: '#fff'
+          });
     }
+
     return(<div style={{display:'flex'}}>
         
         {value==0?<div className="product-actions" style={{padding:0}}>
-            <button style={{width: matchesLG?'60px':props.width && matchesMd?'20px':props.width, height: matchesSM?'25px':props.height, fontSize:matchesMd?'12px':props.fontSize,display:'flex',alignItems:'center',justifyContent:'center',padding:'5px 0px'}} onClick={handlePlus}>Add <ShoppingCartOutlinedIcon  style={{marginLeft:4, fontSize:matchesMd?'12px':props.fontSize}}/></button>
+            <button  style={{width: matchesLG?'60px':props.width && matchesMd?'20px':props.width, height: matchesSM?'25px':props.height, fontSize:matchesMd?'12px':props.fontSize,display:'flex',alignItems:'center',justifyContent:'center',padding:'5px 0px'}} onClick={handlePlus}>Add <ShoppingCartOutlinedIcon  style={{marginLeft:4, fontSize:matchesMd?'12px':props.fontSize}}/></button>
         </div>:
         <div style={{width: matchesLG?'60px':props.width && matchesMd?'20px':props.width, height: matchesSM?'25px':props.height, background:'#00391c',display:'flex',alignItems:'center',justifyContent:'center',gap:matchesSM?'5px':'10px',backgroundColor:'#007bff',border: 'none',padding: '3px 10px',borderRadius: 8,fontWeight:600}} >
             <div onClick={handleMinus} style={{color:'#fff',fontSize: props.fontSize, fontWeight:600,cursor:'pointer',marginLeft:40}}><RemoveIcon style={{fontSize: props.fontSize,fontWeight:800}}/></div>

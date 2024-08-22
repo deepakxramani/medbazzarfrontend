@@ -1,3 +1,4 @@
+import Cookies from "js-cookie";
 const initialState={
     data:{},
     user:{}
@@ -8,12 +9,14 @@ export function RootReducer(state=initialState,action){
     {
         case 'ADD_USER':
             state.user[action.payload[0]]=action.payload[1]
-            console.log(state.data)
+            // console.log(state.data)
             return {data: state.data, user: state.user}
         
         case 'ADD_PRODUCT':
             state.data[action.payload[0]]=action.payload[1]
             // console.log(state.data)
+            Cookies.set("CART",JSON.stringify(state.data), { expires: 7 })
+            console.log(Cookies.get("CART"))
             return {data: state.data, user: state.user}
 
         case 'EDIT_EMPLOYEE':
@@ -24,6 +27,8 @@ export function RootReducer(state=initialState,action){
         case 'DELETE_PRODUCT':
             delete state.data[action.payload[0]]
             // console.log(state.data)
+            Cookies.set("CART",JSON.stringify(state.data), { expires: 7 })
+            console.log(Cookies.get("CART"))
             return {data: state.data, user: state.user}
 
         default:

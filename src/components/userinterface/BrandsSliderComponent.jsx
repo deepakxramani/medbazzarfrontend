@@ -25,9 +25,9 @@ export default function BrandsSliderComponent(props) {
  const matchesXS = useMediaQuery(theme.breakpoints.down('xs'));
 
   const showSlide = () => {
-    return brands?.map((item,index) => {
+    return brands?.map((item,i) => {
       return (
-        <div>
+        <div key={i}>
         <Paper elevation={3} style={{width:matchesMd?"90%":"80%",display:'block',borderRadius:15}}>
           <img
             src={`${serverURL}/images/${item.brandicon}`}
@@ -110,13 +110,13 @@ export default function BrandsSliderComponent(props) {
 
   return (
     <div style={{ width: '95%', position: 'relative' }}>
-        <div style={{position:'absolute',top: '40%',display:matchesSM?'none':'flex',alignItems:'center',justifyContent:'center',width:40,height:40, borderRadius:20,background:'#95a5a6', opacity:0.6, zIndex:1}}>
+        <div style={{position:'absolute',top: '40%',display:matchesSM?'none':'flex',alignItems:'center',justifyContent:'center',width:40,height:40, borderRadius:20,background:'#95a5a6', opacity:0.6, zIndex:1, cursor: 'pointer'}}>
             <ArrowBackIosIcon onClick={handleForward} />
         </div>
           
             <Slider ref={sld} {...settings}>{showSlide()}</Slider>
            
-        <div style={{position:'absolute',top:'40%',right: '0.09%',display:matchesSM?'none':'flex',alignItems:'center',justifyContent:'center',width:40,height:40, borderRadius:20,background:'#95a5a6', opacity:0.6, zIndex:2}}>
+        <div style={{position:'absolute',top:'40%',right: '0.09%',display:matchesSM?'none':'flex',alignItems:'center',justifyContent:'center',width:40,height:40, borderRadius:20,background:'#95a5a6', opacity:0.6, zIndex:2, cursor: 'pointer'}}>
             <ArrowForwardIosIcon onClick={handleBackward} />
         </div>
     </div>

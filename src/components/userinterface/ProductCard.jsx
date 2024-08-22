@@ -15,10 +15,12 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { createRef } from 'react';
 
 export default function ProductCard(props) {
   var dispatch = useDispatch();
   var navigate = useNavigate();
+  var sld = createRef();
   const [pink, setPink] = useState(false);
 
   var productFromRedux = useSelector((state) => state.data);
@@ -56,7 +58,7 @@ export default function ProductCard(props) {
   const productDetail = () => {
     return product?.map((item, index) => {
       return (
-        <div className="product-card">
+        <div key={index} className="product-card">
           {/* <div style={{display:'inline-block',width:70,backgroundColor:'yellow',clipPath:'polygon(100% 0, 80% 50%, 100% 100%, 0% 100%, 0 50%, 0% 0%)'}}><p style={{fontSize:13,padding:'2px 5px',fontWeight:500}}>20% Off</p></div> */}
           <div
             className="bookmark"
@@ -103,7 +105,7 @@ export default function ProductCard(props) {
               style={{ marginTop: matchesSM ? 25 : 30 }}
             >
               {/* Conditionally render discount if available */}
-              {item.offerprice !== 0 ? (
+              {item.offerprice != 0 ? (
                 <div>
                   <span
                     className="product-price-old"
@@ -263,6 +265,15 @@ export default function ProductCard(props) {
     ],
   };
 
+  const handleForward=()=>{
+    sld.current.slickNext()
+  }
+  
+  const handleBackward=()=>{
+  sld.current.slickPrev()
+  }
+
+
   return (
     <div style={{ width: '95%', position: 'relative' }}>
       <h2
@@ -287,12 +298,13 @@ export default function ProductCard(props) {
           background: '#95a5a6',
           opacity: 0.6,
           zIndex: 1,
+          cursor: 'pointer'
         }}
       >
-        {<ArrowBackIosIcon />}
+        {<ArrowBackIosIcon onClick={handleForward} />}
       </div>
       <div>
-        <Slider {...settings}>{productDetail()}</Slider>
+        <Slider ref={sld} {...settings}>{productDetail()}</Slider>
       </div>
       <div
         style={{
@@ -308,9 +320,10 @@ export default function ProductCard(props) {
           background: '#95a5a6',
           opacity: 0.6,
           zIndex: 1,
+          cursor: 'pointer'
         }}
       >
-        {<ArrowForwardIosIcon />}
+        {<ArrowForwardIosIcon onClick={handleBackward} />}
       </div>
     </div>
   );

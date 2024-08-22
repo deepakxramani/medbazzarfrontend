@@ -9,7 +9,7 @@ import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
 import { serverURL } from "../../services/FetchNodeServices";
 import {useDispatch} from "react-redux"
 import {useNavigate} from "react-router-dom"
-
+import { useEffect } from "react";
 
 
 export default function AddToCart(props){
@@ -21,7 +21,7 @@ export default function AddToCart(props){
     const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
     const matchesXS = useMediaQuery(theme.breakpoints.down('xs'));
 
-    const productFromRedux = props.products
+    const productFromRedux = props?.products
     var productDetails = Object.values(productFromRedux)
 
     const handleChange=(v,item)=>{

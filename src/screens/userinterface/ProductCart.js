@@ -7,6 +7,7 @@ import Header from "../../components/userinterface/Header";
 import AddAddress from "../../components/userinterface/AddAddress";
 import { postData } from "../../services/FetchNodeServices";
 import DeliveryAddress from "../../components/userinterface/DeliveryAddress";
+import Cookies from "js-cookie"
 
 export default function ProductCart(){
     const [pageRefresh,setPageRefresh]=useState(false)
@@ -15,6 +16,14 @@ export default function ProductCart(){
 
 
     var products = useSelector(state=>state.data)
+    // try{
+    //     var products = JSON.parse(Cookies.get('CART'))
+    //   }
+    //   catch
+    //   {
+    //     products = {}
+    //   }
+    
     var userData = Object.values(useSelector(state=>state.user))[0]
 
     // console.log("User Data:", userData)

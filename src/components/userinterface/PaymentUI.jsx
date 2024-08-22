@@ -25,7 +25,7 @@ export default function PaymentUI(props){
     },0);
 
     var amount=product.reduce((p1,p2)=>{
-        var amt = p2.qty*(p2.offerprice!==0?p2.offerprice:p2.price)
+        var amt = p2.qty*(p2.offerprice!=0?p2.offerprice:p2.price)
         return p1+amt
     },0);
 
