@@ -1,6 +1,6 @@
 import axios from "axios";
-var serverURL = process.env.SERVER_URL
-alert(serverURL);
+var serverURL = process.env.SERVER_URL      
+
 const postData=async(url,body)=>{
     try
     {
