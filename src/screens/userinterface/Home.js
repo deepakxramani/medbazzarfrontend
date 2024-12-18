@@ -53,13 +53,13 @@ export default function Home()
         // console.log(result.data)
     }
 
-    useEffect(function(){
+    useEffect(() => {
         fetchAllBanners()
         fetchAllBrands()
         fetchAllCategory()
         fetchAllProductDetails('deal of the day!')
         fetchAllConcerns()
-    })
+    }, [])
 
     return(<div style={{fontFamily:'Kanit, sans-serif'}}>
 
