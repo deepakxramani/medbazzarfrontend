@@ -1,6 +1,7 @@
 import { Grid } from "@mui/material"
 import React from "react"
 import loginImage from "../../assets/login.webp"
+import loginImg from "../../assets/login-img.png"
 
 
 export default function LogInImage(){
@@ -9,7 +10,7 @@ export default function LogInImage(){
 
             <Grid item xs={12}>
                 <div>
-                    <img src={loginImage} width={'95%'} alt="login-cover" />
+                    <img src={loginImg} width={'95%'} alt="login-cover" />
                 </div>
             </Grid>
 
