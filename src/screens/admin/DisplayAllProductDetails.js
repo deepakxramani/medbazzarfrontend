@@ -199,7 +199,7 @@ export default function DisplayAllProductDetails(){
         var formData=new FormData()
         formData.append('productid',productId)
         formData.append('picture',picture.bytes)
-        var result=await postData('products/edit_product_picture',formData)
+        var result=await postData('productdetails/edit_product_picture',formData)
         if(result.status)
         {
             Swal.fire({
