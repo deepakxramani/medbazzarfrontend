@@ -498,6 +498,7 @@ export default function ProductDetails(){
                                 <MenuItem value="Drop">Drop</MenuItem>
                                 <MenuItem value="Lotion">Lotion</MenuItem>
                                 <MenuItem value="Powder">Powder</MenuItem>
+                                <MenuItem value="Oil">Oil</MenuItem>
                                 <MenuItem value="Gel">Gel</MenuItem>
                                 <MenuItem value="Spray">Spray</MenuItem>
                                 <MenuItem value="Cream">Cream</MenuItem>
