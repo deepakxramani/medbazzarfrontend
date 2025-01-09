@@ -92,13 +92,13 @@ export default function ProductPicture(props){
         <Grid container  style={{display:'flex', alignItems:'center', justifyContent:'center'}}>
             <Grid item xs={3}   style={{display:'flex', justifyContent:'center', alignItems:'center',flexDirection:'column'}}>
               <div>
-                {matchesMd?'':<ExpandLessIcon style={{fontSize:60, marginLeft:'auto',marginRight:'auto'}} onClick={handleForward} />}
+                {matchesXS?'':<ExpandLessIcon style={{fontSize:60, marginLeft:'auto',marginRight:'auto'}} onClick={handleForward} />}
               </div>
               <div style={{width:'20%',height:'20%',display:'flex',justifyContent:'center',alignItems:'center', gap:6}}>
                 <Slider ref={sld} {...settings}>{showSlide()}</Slider>
                 </div>
               <div>
-              {matchesMd?'':<ExpandMoreIcon style={{fontSize:60}} onClick={handleBackward}/>}
+              {matchesXS?'':<ExpandMoreIcon style={{fontSize:60}} onClick={handleBackward}/>}
               </div>
             </Grid>
             <Grid item xs={9}  style={{width:'auto',height:350,display:'flex'}}>
