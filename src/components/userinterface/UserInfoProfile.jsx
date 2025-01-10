@@ -40,7 +40,7 @@ export default function UserInfoProfile(){
         };
     
         getUserData();
-      }, [mobileno]);
+      }, []);
       
     const handleUsername=(value)=>{
         
