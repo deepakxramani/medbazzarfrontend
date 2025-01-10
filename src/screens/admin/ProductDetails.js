@@ -574,7 +574,7 @@ export default function ProductDetails(){
                 </Grid>
 
                 <Grid item xs={6} style={{display:'flex', justifyContent:'center', }}>
-                    {showImages}
+                    {showImages()}
                 </Grid> 
 
                 <Grid item xs={6} style={{display:'flex', justifyContent:'center', }}>

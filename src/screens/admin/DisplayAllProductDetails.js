@@ -473,7 +473,7 @@ export default function DisplayAllProductDetails(){
                 </Grid>
                 
                 <Grid item xs={6} style={{display:'flex', justifyContent:'center', }}>
-                    {showImages}
+                    {showImages()}
                 </Grid>
 
 
