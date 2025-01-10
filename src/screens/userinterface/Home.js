@@ -13,7 +13,6 @@ import  {useTheme}  from '@mui/material/styles';
 
 export default function Home()
 {
-
     const [bannerList, setBannerList]=useState([])
     const [brandList, setBrandList]=useState([])
     const [categoryList, setCategoryList]=useState([])
