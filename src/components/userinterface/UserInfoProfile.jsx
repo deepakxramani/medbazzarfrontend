@@ -112,12 +112,7 @@ const handlePicture = async (event) => {
         });
       }
     } catch (e) {
-      Swal.fire({
-        icon: "error",
-        title: "An error occurred while uploading the picture",
-        timer: 1500,
-        toast: true
-      });
+      
     }
   };
 
