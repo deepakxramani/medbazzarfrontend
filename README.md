@@ -38,10 +38,20 @@ https://www.youtube.com/watch?v=NUfMm5MDu78
 
 ## 🧠 Tech Stack
 
-- React  
+FRONTEND:
+- React
 - React Router  
 - CSS  
-- API integration  
+- API integration
+- Redux Toolkit
+- Axios  
+
+BACKEND:
+- Node.js
+- Express.js
+- MySQL
+- Razorpay Payment Gateway
+- JWT
 
 ---
 
