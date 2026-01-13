@@ -6,8 +6,7 @@ import  {useTheme}  from '@mui/material/styles';
 export default function UserProfile() {
     var theme=useTheme();
     const matchesMd = useMediaQuery(theme.breakpoints.down('md'));
-    const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
-    const matchesXS = useMediaQuery(theme.breakpoints.down('xs'));
+
   return (
     <div>
       <Header />
