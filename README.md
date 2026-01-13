@@ -73,17 +73,17 @@ Open http://localhost:3000 in your browser.
 ## 📁 Project Structure
 
 medbazzarfrontend/
-public/
-src/
-assets/
-components/
-pages/
-services/
-App.js
-index.js
-.gitignore
-package.json
-README.md
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── pages/
+│   ├── services/
+│   ├── App.js
+│   └── index.js
+├── .gitignore
+├── package.json
+└── README.md
 
 ---
 
