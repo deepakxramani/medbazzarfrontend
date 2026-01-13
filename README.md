@@ -93,6 +93,8 @@ This project is licensed under the MIT License.
 ## 📫 Author
 
 Deepak X Ramani  
-GitHub: https://github.com/deepakxramani  
+GitHub: https://github.com/deepakxramani
+
+LinkedIn: https://www.linkedin.com/in/deepakxramani
 
 Thanks for checking out MedBazzar 🚀
