@@ -7,7 +7,6 @@ import Header from "../../components/userinterface/Header";
 import AddAddress from "../../components/userinterface/AddAddress";
 import { postData } from "../../services/FetchNodeServices";
 import DeliveryAddress from "../../components/userinterface/DeliveryAddress";
-import Cookies from "js-cookie"
 
 export default function ProductCart(){
     const [pageRefresh,setPageRefresh]=useState(false)
