@@ -11,7 +11,7 @@ import {
   Avatar,
 } from '@mui/material';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import logo from '../../assets/logo2.png';
+import logo from '../../assets/MedBazzarNewLogo1.png';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
@@ -33,8 +33,7 @@ import { useStyles } from '../../screens/userinterface/HomeCss';
 import { postData, serverURL } from '../../services/FetchNodeServices';
 import { useSelector } from 'react-redux';
 import ShowCartProducts from '../userinterface/ShowCartProducts';
-import Swal from 'sweetalert2';
-import Cookies from 'js-cookie'
+
 
 export default function Header(props) {
   const navigate = useNavigate();
