@@ -27,12 +27,12 @@ const ConcernSlider = lazy(
 // Skeleton Components
 const BannerSkeleton = () => (
   <div style={{ width: '95%', maxWidth: 1200, margin: '0 auto' }}>
-    <Skeleton height={400} borderRadius={15} />
+    <Skeleton height={'min(400px, 50vh)'} borderRadius={15} />
   </div>
 );
 
 const SliderSkeleton = ({ count = 8 }) => (
-  <div style={{ width: '95%', display: 'flex', gap: 15 }}>
+  <div style={{ width: '95%', display: 'flex', gap: 15, overflow: 'hidden' }}>
     {[...Array(count)].map((_, i) => (
       <div key={i} style={{ flex: '0 0 auto', width: 120 }}>
         <Skeleton height={120} borderRadius={15} />
@@ -42,10 +42,18 @@ const SliderSkeleton = ({ count = 8 }) => (
 );
 
 const ProductsSkeleton = () => (
-  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 20, width: '100%' }}>
-    {[...Array(8)].map((_, i) => (
-      <div key={i} style={{ width: 250 }}>
-        <Skeleton height={300} borderRadius={10} />
+  <div
+    style={{
+      display: 'flex',
+      gap: 20,
+      width: '95%',
+      overflow: 'hidden',
+      margin: '0 auto',
+    }}
+  >
+    {[...Array(6)].map((_, i) => (
+      <div key={i} style={{ flex: '0 0 auto', width: 220 }}>
+        <Skeleton height={250} borderRadius={10} />
         <Skeleton height={20} style={{ marginTop: 10 }} />
         <Skeleton height={20} width='60%' style={{ marginTop: 5 }} />
       </div>

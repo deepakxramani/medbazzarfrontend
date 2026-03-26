@@ -3,18 +3,24 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {createStore} from 'redux'
-import {Provider} from 'react-redux'
-import RootReducer from '../src/storage/RootReducer'
-var store=createStore(RootReducer)
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import RootReducer from '../src/storage/RootReducer';
+import { Toaster } from 'react-hot-toast';
+var store = createStore(RootReducer);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-    <App />
+      <App />
+      <Toaster
+        position='top-right'
+        containerStyle={{ marginTop: 60 }}
+        reverseOrder={true}
+      />
     </Provider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
 
 // If you want to start measuring performance in your app, pass a function
