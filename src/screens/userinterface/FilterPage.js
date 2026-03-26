@@ -1,4 +1,5 @@
-import { Grid } from '@mui/material';
+import { Grid, Button, Drawer } from '@mui/material';
+import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import FilterComp from '../../components/userinterface/FilterComp';
 import ProductListing from '../../components/userinterface/ProductListing';
 import { useLocation } from 'react-router-dom';
@@ -13,6 +14,11 @@ export default function FilterPage(props) {
   var location = useLocation();
   const [products, setProducts] = useState([]);
   const [pageRefresh, setPageRefresh] = useState(false);
+  const [filterDrawerOpen, setFilterDrawerOpen] = useState(false);
+
+  const toggleFilterDrawer = () => {
+    setFilterDrawerOpen(!filterDrawerOpen);
+  };
 
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up('sm'));
@@ -39,7 +45,7 @@ export default function FilterPage(props) {
   const fetchAllProduct = async () => {
     var result = await postData(
       'userinterface/display_all_productdetail_by_category',
-      { categoryid: categoryid, pattern: pattern }
+      { categoryid: categoryid, pattern: pattern },
     );
     //  var uniqueData = [...new Set(result.data)];
     setProducts(result.data);
@@ -73,12 +79,38 @@ export default function FilterPage(props) {
         <div></div>
       )}
       <Grid item xs={matches ? 8 : 12} style={{ background: '#fff' }}>
+        {!matches && (
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              margin: '10px 0',
+            }}
+          >
+            <Button
+              variant='outlined'
+              startIcon={<FilterAltIcon />}
+              onClick={toggleFilterDrawer}
+            >
+              Filters
+            </Button>
+            <Drawer
+              anchor='bottom'
+              open={filterDrawerOpen}
+              onClose={toggleFilterDrawer}
+            >
+              <div style={{ padding: 20 }}>
+                <FilterComp />
+              </div>
+            </Drawer>
+          </div>
+        )}
         <div
           style={{
             display: 'flex',
-            justifyContent: 'flex-start',
+            justifyContent: matches ? 'flex-start' : 'center',
             margin: '0px auto',
-            paddingRight: 150,
+            paddingRight: matches ? 150 : 0,
           }}
         >
           <ProductListing
