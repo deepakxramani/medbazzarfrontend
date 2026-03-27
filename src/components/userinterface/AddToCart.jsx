@@ -7,13 +7,13 @@ import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined
 import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined';
 import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
 import { serverURL } from "../../services/FetchNodeServices";
-import {useDispatch} from "react-redux"
+import { useAuth } from '../../context/AuthContext';
 import {useNavigate} from "react-router-dom"
 import { useEffect } from "react";
 
 
 export default function AddToCart(props){
-    var dispatch = useDispatch()
+    var { addToCart, removeFromCart } = useAuth()
     const navigate = useNavigate()
 
     const theme = useTheme()
@@ -28,12 +28,12 @@ export default function AddToCart(props){
         if(v>0)
         {
           item['qty']=v
-          dispatch({type:'ADD_PRODUCT',payload:[item.productdetailid,item]})
+          addToCart(item.productdetailid, item)
           
         }
         else
         {
-          dispatch({type:'DELETE_PRODUCT',payload:[item.productdetailid]})
+          removeFromCart(item.productdetailid)
           
         }
         props.setPageRefresh(!props.pageRefresh) 

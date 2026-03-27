@@ -1,12 +1,10 @@
-import { useSelector } from 'react-redux';
+import { useAuth } from '../../context/AuthContext';
 import { Divider, Paper } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 export default function ShowCartProducts(props) {
   var navigate = useNavigate();
-  var products = useSelector((state) => state.data);
-  var keys = Object?.keys(products);
-  var productsList = Object?.values(products);
+  var { cart: products, cartKeys: keys, cartItems: productsList } = useAuth();
 
   const showProducts = () => {
     return productsList?.map((item) => {

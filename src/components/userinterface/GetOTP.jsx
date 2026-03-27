@@ -4,11 +4,11 @@ import React from "react";
 import OtpInput from "react-otp-input";
 import LogInOTP from "./LoginOTP";
 import { useNavigate } from "react-router-dom";
-import {useDispatch} from "react-redux";
+import { useAuth } from '../../context/AuthContext';
 
 export default function GetOTP(props) {
   var navigate = useNavigate()
-  var dispatch = useDispatch()
+  var { loginUser } = useAuth()
   
   const [otp, setOtp] = useState(0);
   const [status,setStatus]=useState(true)
@@ -16,7 +16,7 @@ export default function GetOTP(props) {
   const handleVerifyOtp=()=>{
    if(otp==props.otp)
    {
-    dispatch({type:'ADD_USER',payload:[props?.mobileno,props?.userData]})
+     loginUser(props?.mobileno, props?.userData)
     navigate("/productcart")
 
    }

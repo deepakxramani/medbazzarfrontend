@@ -7,18 +7,21 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import RootReducer from '../src/storage/RootReducer';
 import { Toaster } from 'react-hot-toast';
+import { AuthProvider } from './context/AuthContext';
 var store = createStore(RootReducer);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
-      <Toaster
-        position='top-right'
-        containerStyle={{ marginTop: 60 }}
-        reverseOrder={true}
-      />
+      <AuthProvider>
+        <App />
+        <Toaster
+          position='top-right'
+          containerStyle={{ marginTop: 60 }}
+          reverseOrder={true}
+        />
+      </AuthProvider>
     </Provider>
   </React.StrictMode>,
 );

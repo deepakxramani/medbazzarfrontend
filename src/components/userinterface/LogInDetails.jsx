@@ -6,12 +6,12 @@ import LogInOTP from './LoginOTP';
 import { postData } from '../../services/FetchNodeServices';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useAuth } from '../../context/AuthContext';
 import toast from 'react-hot-toast';
 
 export default function LogInDetails(props) {
   const navigate = useNavigate();
-  var dispatch = useDispatch();
+  var { loginUser } = useAuth();
   const [otp, setOtp] = useState('');
   const [status, setStatus] = useState(true);
   const [emailId, setEmailId] = useState('');
@@ -28,7 +28,7 @@ export default function LogInDetails(props) {
       var result = await postData('users/submit_user', body);
       if (result.status) {
         toast.success('You are registered now!');
-        dispatch({ type: 'ADD_USER', payload: [props.mobileno, body] });
+        loginUser(props.mobileno, body);
         navigate('/productcart');
       }
     } else {

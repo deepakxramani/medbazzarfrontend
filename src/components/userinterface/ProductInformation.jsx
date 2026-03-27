@@ -12,20 +12,20 @@ import WatchLaterIcon from '@mui/icons-material/WatchLater';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import parse from 'html-react-parser';
-import { useDispatch, useSelector } from 'react-redux';
+import { useAuth } from '../../context/AuthContext';
 import PlusMinusComp3 from './PlusMinusComp3';
 
 export default function ProductInformation(props) {
   var sld = createRef();
   var navigate = useNavigate();
-  var dispatch = useDispatch();
+  var { addToCart, removeFromCart, cart: productFromRedux } = useAuth();
 
   var theme = useTheme();
   const matchesMd = useMediaQuery(theme.breakpoints.down('md'));
   const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
   const matchesXS = useMediaQuery(theme.breakpoints.down('xs'));
 
-  const productFromRedux = useSelector((state) => state.data);
+
   var values = Object.values(productFromRedux);
 
   // var product = props?.item
@@ -60,9 +60,9 @@ export default function ProductInformation(props) {
   const handleChange = (v, item) => {
     if (v > 0) {
       item['qty'] = v;
-      dispatch({ type: 'ADD_PRODUCT', payload: [item.productdetailid, item] });
+      addToCart(item.productdetailid, item);
     } else {
-      dispatch({ type: 'DELETE_PRODUCT', payload: [item.productdetailid] });
+      removeFromCart(item.productdetailid);
     }
     props.setPageRefresh(!props.pageRefresh);
   };

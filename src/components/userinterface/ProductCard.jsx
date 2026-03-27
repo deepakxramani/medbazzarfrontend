@@ -13,17 +13,16 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
-import { useDispatch, useSelector } from 'react-redux';
+import { useAuth } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { createRef } from 'react';
 
 export default function ProductCard(props) {
-  var dispatch = useDispatch();
+  var { addToCart, removeFromCart, cart: productFromRedux } = useAuth();
   var navigate = useNavigate();
   var sld = createRef();
   const [pink, setPink] = useState(false);
 
-  var productFromRedux = useSelector((state) => state.data);
   var productRedux = Object.values(productFromRedux);
 
   var product = props?.data;
@@ -44,9 +43,9 @@ export default function ProductCard(props) {
   const handleChange = (v, item) => {
     if (v > 0) {
       item['qty'] = v;
-      dispatch({ type: 'ADD_PRODUCT', payload: [item.productdetailid, item] });
+      addToCart(item.productdetailid, item);
     } else {
-      dispatch({ type: 'DELETE_PRODUCT', payload: [item.productdetailid] });
+      removeFromCart(item.productdetailid);
     }
     props.setPageRefresh(!props.pageRefresh);
   };
