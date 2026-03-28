@@ -333,7 +333,12 @@ export default function Header(props) {
   const navigate = useNavigate();
   const theme = useTheme();
 
-  const { cart, cartKeys: keys, displayName: userData, userData: userInformation } = useAuth();
+  const {
+    cart,
+    cartKeys: keys,
+    displayName: userData,
+    userData: userInformation,
+  } = useAuth();
 
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
@@ -360,7 +365,7 @@ export default function Header(props) {
       }
     };
     fetchPicture();
-  }, [userInformation?.mobileno]);
+  }, [userInformation?.mobileno, userInformation, userData]);
 
   return (
     <Box
