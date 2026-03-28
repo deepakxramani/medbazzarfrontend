@@ -8,7 +8,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import {Divider} from "@mui/material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import PlusMinusComp from "./PlusMinusComp";
-import {  useDispatch,useSelector } from "react-redux";
+import { useAuth } from '../../context/AuthContext';
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -19,8 +19,7 @@ import PlusMinusComp2 from "./PlusMinusComp2";
 export default function ProductListing(props){
     const [pink,setPink]=useState(false)
     var navigate = useNavigate();
-    var dispatch=useDispatch()
-    var productFromRedux=useSelector(state=>state.data)
+    var { addToCart, removeFromCart, cart: productFromRedux } = useAuth()
     var productRedux=Object.values(productFromRedux)
     
     const theme = useTheme();
@@ -42,12 +41,12 @@ export default function ProductListing(props){
         if(v>0)
         {
           item['qty']=v
-          dispatch({type:'ADD_PRODUCT',payload:[item.productdetailid,item]})
+          addToCart(item.productdetailid, item)
           
         }
         else
         {
-          dispatch({type:'DELETE_PRODUCT',payload:[item.productdetailid]})
+          removeFromCart(item.productdetailid)
           
         }
         props.setPageRefresh(!props.pageRefresh) 

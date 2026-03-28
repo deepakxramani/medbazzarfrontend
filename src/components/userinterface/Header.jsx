@@ -27,7 +27,7 @@ import { useTheme } from '@mui/material/styles';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { postData, serverURL } from '../../services/FetchNodeServices';
-import { useSelector } from 'react-redux';
+import { useAuth } from '../../context/AuthContext';
 import ShowCartProducts from '../userinterface/ShowCartProducts';
 import logo from '../../assets/MedBazzarNewLogo1.png';
 
@@ -333,17 +333,7 @@ export default function Header(props) {
   const navigate = useNavigate();
   const theme = useTheme();
 
-  const products = useSelector((state) => state.data);
-  const keys = Object?.keys(products);
-  const user = useSelector((state) => state.user);
-
-  let userData = '';
-  let userInformation = {};
-  try {
-    const words = Object.values(user)[0].username.split(' ');
-    userData = words[0];
-    userInformation = Object.values(user)[0];
-  } catch (e) {}
+  const { cart, cartKeys: keys, displayName: userData, userData: userInformation } = useAuth();
 
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
@@ -358,7 +348,7 @@ export default function Header(props) {
 
   useEffect(() => {
     const fetchPicture = async () => {
-      if (!userInformation.mobileno) return;
+      if (!userInformation?.mobileno) return;
       const result = await postData('users/check_userdata', {
         mobileno: userInformation.mobileno,
       });
@@ -370,7 +360,7 @@ export default function Header(props) {
       }
     };
     fetchPicture();
-  }, [userInformation.mobileno]);
+  }, [userInformation?.mobileno]);
 
   return (
     <Box

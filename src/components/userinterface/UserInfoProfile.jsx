@@ -1,6 +1,6 @@
 import { Grid, Avatar, TextField, Button, Tooltip, Zoom } from '@mui/material';
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useAuth } from '../../context/AuthContext';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
@@ -10,8 +10,7 @@ import { postData, serverURL } from '../../services/FetchNodeServices';
 import Swal from 'sweetalert2';
 import toast from 'react-hot-toast';
 export default function UserInfoProfile() {
-  var user = useSelector((state) => state.user);
-  var userData = Object.values(user)[0];
+  var { userData } = useAuth();
 
   const [username, setUsername] = useState(userData?.username);
   const [mobileno, setMobile] = useState(userData?.mobileno);
