@@ -38,8 +38,8 @@ const defaultTheme = createTheme();
 
 export default function AdminLogin() {
   const navigate = useNavigate();
-  const [emailid, setEmailId] = useState('deep@gmail.com');
-  const [password, setPassword] = useState('12345');
+  const [emailid, setEmailId] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleClick = async () => {
     var result = await postData('admin/check_admin_login', {
