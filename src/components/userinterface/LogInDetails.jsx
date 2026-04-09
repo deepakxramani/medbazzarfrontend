@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Grid, Input, Button } from '@mui/material';
 import { Paper } from '@mui/material';
 import OtpInput from 'react-otp-input';
 import LogInOTP from './LoginOTP';
 import { postData } from '../../services/FetchNodeServices';
-import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import toast from 'react-hot-toast';
@@ -19,7 +18,7 @@ export default function LogInDetails(props) {
   const [lastname, setLastName] = useState('');
 
   const handleSubmit = async () => {
-    if (props.otp == otp) {
+    if (props.otp === otp) {
       var body = {
         mobileno: props.mobileno,
         emailid: emailId,

@@ -1,4 +1,4 @@
-import { Grid, Button, Divider } from '@mui/material';
+import { Grid, Button } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 
 export default function DeliveryAddress(props) {
@@ -57,7 +57,7 @@ export default function DeliveryAddress(props) {
               md={6}
               style={{ width: '70%', margin: '5px 0px' }}
             >
-              {props.userAddress.length == 0 ? (
+              {props.userAddress.length === 0 ? (
                 <span>
                   <p style={{ fontWeight: 500 }}>
                     Please add your address to continue

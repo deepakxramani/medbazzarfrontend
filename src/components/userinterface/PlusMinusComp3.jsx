@@ -18,7 +18,6 @@ export default function PlusMinusComp3(props) {
   const theme = useTheme();
   const matchesMd = useMediaQuery(theme.breakpoints.down('md'));
   const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
-  const matchesXS = useMediaQuery(theme.breakpoints.down('xs'));
 
   const handleMinus = () => {
     if (value >= 1) {
@@ -38,7 +37,7 @@ export default function PlusMinusComp3(props) {
   };
   return (
     <div style={{ display: 'flex' }}>
-      {value == 0 ? (
+      {value === 0 ? (
         <div className='product-actions' style={{ padding: 0 }}>
           <button
             style={{
