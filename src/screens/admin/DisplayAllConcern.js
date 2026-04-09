@@ -114,19 +114,19 @@ export default function DisplayAllConcerns(){
           confirmButtonText: "Delete",
           denyButtonText: `Don't Delete`
 
-        }).then(async(result) => {
+        }).then(async(swalResult) => {
           /* Read more about isConfirmed, isDenied below */
-          if (result.isConfirmed) {
+          if (swalResult.isConfirmed) {
             var body={concernid:rowData.concernid}
-            var result=await postData('concern/delete_concern_data',body)
-            if(result.status)
+            var deleteResult=await postData('concern/delete_concern_data',body)
+            if(deleteResult.status)
             {Swal.fire({toast:true,title:"Deleted!", icon:"success"});
             fetchAllConcern()}
             else
             Swal.fire({toast:true,title:"Fail to Delete Record!", icon:"error"});
             
 
-          } else if (result.isDenied) {
+          } else if (swalResult.isDenied) {
             Swal.fire({toast:true,title:"Your Record is safe", icon:"info"});
           }
         });
@@ -217,7 +217,7 @@ export default function DisplayAllConcerns(){
             columns={[
               { title: 'Concern Id', field: 'concernid' },
               { title: 'Concern Name', field: 'concernname' },
-              { title: 'Icon', field: 'picture',render:(rowData)=><><img src={`${serverURL}/images/${rowData.picture}`} style={{width:60,height:60,borderRadius:30}}/></>}
+              { title: 'Icon', field: 'picture',render:(rowData)=><><img src={`${serverURL}/images/${rowData.picture}`} alt={rowData.concernname} style={{width:60,height:60,borderRadius:30}}/></>}
 
                
             ]}

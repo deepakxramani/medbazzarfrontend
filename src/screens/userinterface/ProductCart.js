@@ -2,7 +2,7 @@ import AddToCart from '../../components/userinterface/AddToCart';
 import PaymentUI from '../../components/userinterface/PaymentUI';
 import { Grid } from '@mui/material';
 import { useAuth } from '../../context/AuthContext';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import Header from '../../components/userinterface/Header';
 import AddAddress from '../../components/userinterface/AddAddress';
 import { postData } from '../../services/FetchNodeServices';
@@ -15,7 +15,7 @@ export default function ProductCart() {
 
   var { cart: products, userData } = useAuth();
 
-  const check_user_address = async () => {
+  const check_user_address = useCallback(async () => {
     if (userData?.mobileno === undefined) {
       setStatus(false);
     } else {
@@ -29,13 +29,13 @@ export default function ProductCart() {
         setUserAddress(result.data);
       }
     }
-  };
+  }, [userData?.mobileno]);
 
   useEffect(
     function () {
       check_user_address();
     },
-    [userData?.mobileno, pageRefresh],
+    [check_user_address, pageRefresh],
   );
 
   return (

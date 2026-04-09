@@ -5,7 +5,6 @@ import { useStyles } from './CategoriesCss';
 import TitleComponent from '../../components/admin/TitleComponent';
 import { postData, getData } from '../../services/FetchNodeServices';
 
-import Swal from 'sweetalert2';
 import toast from 'react-hot-toast';
 
 export default function Banners() {

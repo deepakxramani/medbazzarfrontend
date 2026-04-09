@@ -2,7 +2,8 @@ import { Radio,FormControlLabel,RadioGroup,Grid,Divider } from "@mui/material";
 import { BiSolidOffer } from "react-icons/bi";
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
-import { MdDeliveryDining } from "react-icons/md";
+import { serverURL } from '../../services/FetchNodeServices';
+ import { MdDeliveryDining } from "react-icons/md";
 import {useNavigate} from "react-router-dom"
 import { useState,useEffect } from "react";
 import { postData} from "../../services/FetchNodeServices";
@@ -25,7 +26,7 @@ export default function PaymentUI(props){
     },0);
 
     var amount=product.reduce((p1,p2)=>{
-        var amt = p2.qty*(p2.offerprice!=0?p2.offerprice:p2.price)
+        var amt = p2.qty*(p2.offerprice!==0?p2.offerprice:p2.price)
         return p1+amt
     },0);
 

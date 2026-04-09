@@ -1,13 +1,10 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
 import { serverURL } from "../../services/FetchNodeServices";
-import { Button,Grid } from "@mui/material";
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import {Divider} from "@mui/material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import PlusMinusComp from "./PlusMinusComp";
 import { useAuth } from '../../context/AuthContext';
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -20,7 +17,6 @@ export default function ProductListing(props){
     const [pink,setPink]=useState(false)
     var navigate = useNavigate();
     var { addToCart, removeFromCart, cart: productFromRedux } = useAuth()
-    var productRedux=Object.values(productFromRedux)
     
     const theme = useTheme();
     const matchesMd = useMediaQuery(theme.breakpoints.down("md"));
@@ -108,7 +104,7 @@ export default function ProductListing(props){
           style={{ marginTop: matchesSM ? 25 : 30 }}
         >
           {/* Conditionally render discount if available */}
-          {item.offerprice != 0 ? (
+          {item.offerprice !== 0 ? (
             <div>
               <span
                 className="product-price-old"

@@ -35,6 +35,7 @@ export default function BrandsSliderComponent(props) {
           >
             <img
               src={`${serverURL}/images/${item.brandicon}`}
+              alt={item.brandname || 'Brand'}
               style={{
                 width: matchesMd ? '90%' : '80%',
                 height: 'auto',

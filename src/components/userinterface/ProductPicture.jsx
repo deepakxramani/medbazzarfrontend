@@ -17,8 +17,6 @@ export default function ProductPicture(props){
     var sld=createRef()
     
     var theme=useTheme();
-    const matchesMd = useMediaQuery(theme.breakpoints.down('md'));
-    const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
     const matchesXS = useMediaQuery(theme.breakpoints.down('xs'));
 
     var productDetails = props?.item
@@ -44,6 +42,7 @@ export default function ProductPicture(props){
           return (
               <div>
               <img
+                alt={`Product slide ${i}`}
                 className="product-slider-image"
                 key={i}
                 src={`${serverURL}/images/${item}`}
@@ -103,7 +102,7 @@ export default function ProductPicture(props){
             </Grid>
             <Grid item xs={9}  style={{width:'auto',height:350,display:'flex'}}>
           
-                { <img src={`${serverURL}/images/${images[currentSlide]}`}  style={{width: '100%', height: '100%',borderRadius: 15,objectFit:'contain',border:'2px solid rgba(190,190,190,0.4)'}}/>}
+                { <img src={`${serverURL}/images/${images[currentSlide]}`} alt="Product preview" style={{width: '100%', height: '100%',borderRadius: 15,objectFit:'contain',border:'2px solid rgba(190,190,190,0.4)'}}/>}
                  
             </Grid>
             

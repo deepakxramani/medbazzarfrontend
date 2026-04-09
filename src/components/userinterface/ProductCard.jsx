@@ -104,7 +104,7 @@ export default function ProductCard(props) {
               style={{ marginTop: matchesSM ? 25 : 30 }}
             >
               {/* Conditionally render discount if available */}
-              {item.offerprice != 0 ? (
+              {item.offerprice !== 0 ? (
                 <div>
                   <span
                     className="product-price-old"

@@ -1,13 +1,9 @@
 import { Grid, Avatar, TextField, Button, Tooltip, Zoom } from '@mui/material';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useAuth } from '../../context/AuthContext';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import { postData, serverURL } from '../../services/FetchNodeServices';
-import Swal from 'sweetalert2';
 import toast from 'react-hot-toast';
 export default function UserInfoProfile() {
   var { userData } = useAuth();
@@ -16,31 +12,27 @@ export default function UserInfoProfile() {
   const [mobileno, setMobile] = useState(userData?.mobileno);
   const [emailid, setEmailid] = useState(userData?.emailid);
   const [address, setAddress] = useState(userData?.address);
-  const [userDataServer, setUserDataServer] = useState([]);
   const [picture, setPicture] = useState({ file: '', bytes: '' });
   const [btnStatus, setBtnStatus] = useState(true);
 
   var theme = useTheme();
-  const matchesMd = useMediaQuery(theme.breakpoints.down('md'));
   const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
-  const matchesXS = useMediaQuery(theme.breakpoints.down('xs'));
+
+  const getUserData = useCallback(async () => {
+    var body = { mobileno: mobileno };
+    var result = await postData('users/check_userdata', body);
+    if (result.status) {
+      const userDataFromServer = result.data;
+      setPicture({
+        file: `${serverURL}/images/${userDataFromServer.picture}`,
+        bytes: '',
+      });
+    }
+  }, [mobileno]);
 
   useEffect(() => {
-    const getUserData = async () => {
-      var body = { mobileno: mobileno };
-      var result = await postData('users/check_userdata', body);
-      if (result.status) {
-        const userDataFromServer = result.data;
-        setPicture({
-          file: `${serverURL}/images/${userDataFromServer.picture}`,
-          bytes: '',
-        });
-      } else {
-      }
-    };
-
     getUserData();
-  }, []);
+  }, [getUserData]);
 
   const handleUsername = (value) => {
     if (value === username) {

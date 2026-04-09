@@ -5,7 +5,7 @@ import { getData, postData, serverURL } from "../../services/FetchNodeServices"
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import DialogTitle from '@mui/material/DialogTitle';
+
 import { Button,Grid,Avatar,TextField } from "@mui/material";
 import TitleComponent from "../../components/admin/TitleComponent";
 import Swal from "sweetalert2";
@@ -112,12 +112,12 @@ export default function DisplayAllBrands(){
       showCancelButton: true,
       confirmButtonText: "Delete",
       denyButtonText: `Don't Delete`
-    }).then(async(result) => {
+    }).then(async(swalResult) => {
       /* Read more about isConfirmed, isDenied below */
-      if (result.isConfirmed) {
+      if (swalResult.isConfirmed) {
         var body={brandid:rowData.brandid}
-        var result=await postData('brands/delete_brand_data',body)
-        if (result.status)
+        var deleteResult=await postData('brands/delete_brand_data',body)
+        if (deleteResult.status)
         {
            Swal.fire({toast:true,title:"Deleted",icon:"success"})
            fetchAllBrand()
@@ -126,7 +126,7 @@ export default function DisplayAllBrands(){
         {
           Swal.fire({toast:true,title:" Fail to Delete Record",icon:"success"});
         }
-      } else if (result.isDenied) {
+      } else if (swalResult.isDenied) {
           Swal.fire({toast:true,title:"Your Record is safe",  icon:"info"});
       }
     });
@@ -209,7 +209,7 @@ export default function DisplayAllBrands(){
             columns={[
               { title: 'Brand Id', field: 'brandid' },
               { title: 'Brand Name', field: 'brandname' },
-              { title: 'Icon', field: 'brandicon',render:(rowData)=><><img src={`${serverURL}/images/${rowData.brandicon}`} style={{width:60,height:60,borderRadius:30}} /></>},
+              { title: 'Icon', field: 'brandicon',render:(rowData)=><><img src={`${serverURL}/images/${rowData.brandicon}`} alt={rowData.brandname} style={{width:60,height:60,borderRadius:30}} /></>},
              
             ]}
             data={brandData}

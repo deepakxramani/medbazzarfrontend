@@ -166,12 +166,12 @@ export default function  DisplayAllProducts(){
             showCancelButton: true,
             confirmButtonText: "Delete",
             denyButtonText: `Don't Delete`
-          }).then(async(result) => {
+          }).then(async(swalResult) => {
             /* Read more about isConfirmed, isDenied below */
-            if (result.isConfirmed) {
+            if (swalResult.isConfirmed) {
               var body={productid:rowData.productid}
-              var result=await postData('products/delete_product_data',body)
-              if (result.status)
+              var deleteResult=await postData('products/delete_product_data',body)
+              if (deleteResult.status)
               {
               Swal.fire({toast:true,title:"Product Deleted!",icon:"success"})
               fetchAllProducts()
@@ -180,7 +180,7 @@ export default function  DisplayAllProducts(){
               {
               Swal.fire({toast:true,title:"Fail to Delete Record",icon:"error"});
               }
-            } else if (result.isDenied) {
+            } else if (swalResult.isDenied) {
               Swal.fire({toast:true,title:"Your Record is safe",  icon:"info"});
             }
           });
@@ -316,7 +316,7 @@ export default function  DisplayAllProducts(){
               { title: 'Brand', field: 'brandname' },
               { title: 'Product',field:'productname'},
               { title: 'Description',field:'description' },
-              { title: 'Picture',field:'picture',render:(rowData)=><><img  src={`${serverURL}/images/${rowData.picture}`} style={{width:60,height:60,borderRadius:30}}/> </>}
+              { title: 'Picture',field:'picture',render:(rowData)=><><img  src={`${serverURL}/images/${rowData.picture}`} alt={rowData.productname} style={{width:60,height:60,borderRadius:30}}/> </>}
           
             ]}
             data={productData}

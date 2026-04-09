@@ -3,7 +3,7 @@ import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import FilterComp from '../../components/userinterface/FilterComp';
 import ProductListing from '../../components/userinterface/ProductListing';
 import { useLocation } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { postData } from '../../services/FetchNodeServices';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -26,7 +26,7 @@ export default function FilterPage(props) {
   var categoryid = '';
 
   try {
-    if (location?.state?.categoryid == undefined) {
+    if (location?.state?.categoryid === undefined) {
       categoryid = null;
     } else {
       categoryid = location?.state?.categoryid;
@@ -35,24 +35,24 @@ export default function FilterPage(props) {
 
   var pattern = '';
   try {
-    if (location?.state?.pattern == undefined) {
+    if (location?.state?.pattern === undefined) {
       pattern = null;
     } else {
       pattern = location?.state?.pattern;
     }
   } catch (e) {}
 
-  const fetchAllProduct = async () => {
+  const fetchAllProduct = useCallback(async () => {
     var result = await postData(
       'userinterface/display_all_productdetail_by_category',
       { categoryid: categoryid, pattern: pattern },
     );
     //  var uniqueData = [...new Set(result.data)];
     setProducts(result.data);
-  };
+  }, [categoryid, pattern]);
   useEffect(function () {
     fetchAllProduct();
-  }, []);
+  }, [fetchAllProduct]);
 
   return (
     <Grid
