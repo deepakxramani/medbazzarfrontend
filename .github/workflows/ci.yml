@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: CI/CD Pipeline
 
 on:
   push:
@@ -8,12 +8,11 @@ env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -25,3 +24,14 @@ jobs:
 
       - name: Build project
         run: npm run build
+
+      # 👇 THIS IS THE STEP YOU ASKED
+      - name: Install Netlify CLI
+        run: npm install -g netlify-cli
+
+      # 👇 next step (deployment)
+      - name: Deploy to Netlify
+        run: netlify deploy --prod --dir=build
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
