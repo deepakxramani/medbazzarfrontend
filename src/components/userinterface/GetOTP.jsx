@@ -13,7 +13,7 @@ export default function GetOTP(props) {
   const [status, setStatus] = useState(true);
 
   const handleVerifyOtp = () => {
-    if (otp === props.otp) {
+    if (otp == props.otp) {
       loginUser(props?.mobileno, props?.userData);
       navigate('/productcart');
     } else {
