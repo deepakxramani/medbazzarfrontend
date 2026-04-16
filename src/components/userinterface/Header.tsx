@@ -58,36 +58,41 @@ const styles = {
   },
 };
 
-const MENU_ITEMS = [
-  { label: 'Dashboard', Icon: DashboardIcon, path: null },
-  {
-    label: 'Category List',
-    Icon: DraftsIcon,
-    path: '/admindashboard/displayallcategory',
-  },
-  {
-    label: 'Sub Categories',
-    Icon: DraftsIcon,
-    path: '/admindashboard/displayallsubcategory',
-  },
-  {
-    label: 'Brands List',
-    Icon: DraftsIcon,
-    path: '/admindashboard/displayallbrands',
-  },
-  {
-    label: 'Products List',
-    Icon: DraftsIcon,
-    path: '/admindashboard/displayallproducts',
-  },
-  {
-    label: 'ProductDetails List',
-    Icon: DraftsIcon,
-    path: '/admindashboard/displayallproductdetails',
-  },
-  { label: 'Banners', Icon: DraftsIcon, path: '/admindashboard/banners' },
-  { label: 'Concern', Icon: DraftsIcon, path: '/admindashboard/concerns' },
-  { label: 'Sales Report', Icon: DraftsIcon, path: null },
+// const MENU_ITEMS = [
+//   { label: 'Dashboard', Icon: DashboardIcon, path: null },
+//   {
+//     label: 'Category List',
+//     Icon: DraftsIcon,
+//     path: '/admindashboard/displayallcategory',
+//   },
+//   {
+//     label: 'Sub Categories',
+//     Icon: DraftsIcon,
+//     path: '/admindashboard/displayallsubcategory',
+//   },
+//   {
+//     label: 'Brands List',
+//     Icon: DraftsIcon,
+//     path: '/admindashboard/displayallbrands',
+//   },
+//   {
+//     label: 'Products List',
+//     Icon: DraftsIcon,
+//     path: '/admindashboard/displayallproducts',
+//   },
+//   {
+//     label: 'ProductDetails List',
+//     Icon: DraftsIcon,
+//     path: '/admindashboard/displayallproductdetails',
+//   },
+//   { label: 'Banners', Icon: DraftsIcon, path: '/admindashboard/banners' },
+//   { label: 'Concern', Icon: DraftsIcon, path: '/admindashboard/concerns' },
+//   { label: 'Sales Report', Icon: DraftsIcon, path: null },
+// ];
+
+const menuItems = [
+  { label: 'Home', Icon: DraftsIcon, path: '/' },
+  { label: 'Profile', Icon: DraftsIcon, path: '/userprofile' },
 ];
 
 // ─── SearchBar ────────────────────────────────────────────────────────────────
@@ -233,7 +238,7 @@ function DrawerContent({ userInformation, pictureFile, onNavigate }) {
 
       <List sx={{ py: 1 }}>
         <Divider />
-        {MENU_ITEMS.map(({ label, Icon, path }) => (
+        {menuItems.map(({ label, Icon, path }) => (
           <ListItem key={label} disablePadding>
             <ListItemButton
               onClick={() => path && onNavigate(path)}
