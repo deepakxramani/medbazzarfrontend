@@ -1,7 +1,14 @@
 {
   "name": "medbazzarfrontend",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -9,59 +16,31 @@
     "@mui/icons-material": "^5.14.19",
     "@mui/material": "^5.14.19",
     "@mui/styled-engine-sc": "^6.0.0-alpha.7",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
+    "@reduxjs/toolkit": "^2.6.1",
     "axios": "^1.6.2",
     "html-react-parser": "^5.1.9",
     "js-cookie": "^3.0.5",
-    "react": "^17.0.0 || ^18.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "react-hot-toast": "^2.6.0",
     "react-icons": "^5.0.1",
     "react-loading-skeleton": "^3.4.0",
     "react-otp-input": "^3.1.1",
-    "react-quill": "^2.0.0",
-    "react-quill-emoji": "^0.1.9",
+    "react-quill-new": "^3.3.4",
+    "react-redux": "^9.2.0",
     "react-router-dom": "^6.21.1",
-    "react-scripts": "5.0.1",
     "react-slick": "^0.30.1",
-    "redux": "^5.0.1",
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.1",
-    "sweetalert2": "^11.10.1",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "postinstall": "npx browserslist@latest --update-db"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "peerDependencies": {
-    "react": "^17.0.0 || ^18.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0"
+    "sweetalert2": "^11.10.1"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "@types/js-cookie": "^3.0.6",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/react-slick": "^0.23.13",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "~5.7.2",
+    "vite": "^6.0.0"
   }
 }
