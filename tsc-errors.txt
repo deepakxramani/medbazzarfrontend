@@ -1,0 +1,441 @@
+﻿src/components/userinterface/AddToCart.tsx(64,29): error TS2339: Property 'picture' does not exist on type 'unknown'.
+src/components/userinterface/AddToCart.tsx(65,52): error TS2339: Property 'picture' does not exist on type 'unknown'.
+src/components/userinterface/AddToCart.tsx(88,27): error TS2339: Property 'productname' does not exist on type 'unknown'.
+src/components/userinterface/AddToCart.tsx(93,27): error TS2339: Property 'brandname' does not exist on type 'unknown'.
+src/components/userinterface/AddToCart.tsx(93,46): error TS2339: Property 'weight' does not exist on type 'unknown'.
+src/components/userinterface/AddToCart.tsx(94,27): error TS2339: Property 'weighttype' does not exist on type 'unknown'.
+src/components/userinterface/AddToCart.tsx(99,35): error TS2339: Property 'offerprice' does not exist on type 'unknown'.
+src/components/userinterface/AddToCart.tsx(99,60): error TS2339: Property 'offerprice' does not exist on type 'unknown'.
+src/components/userinterface/AddToCart.tsx(99,78): error TS2339: Property 'price' does not exist on type 'unknown'.
+src/components/userinterface/AddToCart.tsx(137,33): error TS2339: Property 'qty' does not exist on type 'unknown'.
+src/components/userinterface/BrandsSliderComponent.tsx(103,17): error TS2339: Property 'slickNext' does not exist on type 'unknown'.
+src/components/userinterface/BrandsSliderComponent.tsx(107,17): error TS2339: Property 'slickPrev' does not exist on type 'unknown'.
+src/components/userinterface/BrandsSliderComponent.tsx(131,15): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: Settings): Slider', gave the following error.
+    Type 'RefObject<unknown>' is not assignable to type 'Ref<Slider>'.
+      Type 'RefObject<unknown>' is not assignable to type 'RefObject<Slider>'.
+        Type '{}' is missing the following properties from type 'Slider': slickNext, slickPause, slickPlay, slickPrev, and 7 more.
+  Overload 2 of 2, '(props: Settings, context: any): Slider', gave the following error.
+    Type 'RefObject<unknown>' is not assignable to type 'Ref<Slider>'.
+      Type 'RefObject<unknown>' is not assignable to type 'RefObject<Slider>'.
+        Type '{}' is missing the following properties from type 'Slider': slickNext, slickPause, slickPlay, slickPrev, and 7 more.
+src/components/userinterface/CategoriesSliderComponent.tsx(116,17): error TS2339: Property 'slickNext' does not exist on type 'unknown'.
+src/components/userinterface/CategoriesSliderComponent.tsx(120,17): error TS2339: Property 'slickPrev' does not exist on type 'unknown'.
+src/components/userinterface/CategoriesSliderComponent.tsx(144,17): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: Settings): Slider', gave the following error.
+    Type 'RefObject<unknown>' is not assignable to type 'Ref<Slider>'.
+      Type 'RefObject<unknown>' is not assignable to type 'RefObject<Slider>'.
+        Type '{}' is missing the following properties from type 'Slider': slickNext, slickPause, slickPlay, slickPrev, and 7 more.
+  Overload 2 of 2, '(props: Settings, context: any): Slider', gave the following error.
+    Type 'RefObject<unknown>' is not assignable to type 'Ref<Slider>'.
+      Type 'RefObject<unknown>' is not assignable to type 'RefObject<Slider>'.
+        Type '{}' is missing the following properties from type 'Slider': slickNext, slickPause, slickPlay, slickPrev, and 7 more.
+src/components/userinterface/ConcernSlider.tsx(108,17): error TS2339: Property 'slickNext' does not exist on type 'unknown'.
+src/components/userinterface/ConcernSlider.tsx(112,17): error TS2339: Property 'slickPrev' does not exist on type 'unknown'.
+src/components/userinterface/ConcernSlider.tsx(136,17): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: Settings): Slider', gave the following error.
+    Type 'RefObject<unknown>' is not assignable to type 'Ref<Slider>'.
+      Type 'RefObject<unknown>' is not assignable to type 'RefObject<Slider>'.
+        Type '{}' is missing the following properties from type 'Slider': slickNext, slickPause, slickPlay, slickPrev, and 7 more.
+  Overload 2 of 2, '(props: Settings, context: any): Slider', gave the following error.
+    Type 'RefObject<unknown>' is not assignable to type 'Ref<Slider>'.
+      Type 'RefObject<unknown>' is not assignable to type 'RefObject<Slider>'.
+        Type '{}' is missing the following properties from type 'Slider': slickNext, slickPause, slickPlay, slickPrev, and 7 more.
+src/components/userinterface/DeliveryAddress.tsx(78,17): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(props: { href: string; } & ButtonOwnProps & Omit<ButtonBaseOwnProps, "classes"> & CommonProps & Omit<DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>, "className" | ... 24 more ... | "startIcon">): Element', gave the following error.
+    Type '"filled"' is not assignable to type 'OverridableStringUnion<"text" | "outlined" | "contained", ButtonPropsVariantOverrides>'.
+  Overload 2 of 3, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & ButtonOwnProps & Omit<ButtonBaseOwnProps, "classes"> & CommonProps & Omit<...>): Element', gave the following error.
+    Type '"filled"' is not assignable to type 'OverridableStringUnion<"text" | "outlined" | "contained", ButtonPropsVariantOverrides>'.
+  Overload 3 of 3, '(props: DefaultComponentProps<ExtendButtonBaseTypeMap<ButtonTypeMap<{}, "button">>>): Element', gave the following error.
+    Type '"filled"' is not assignable to type 'OverridableStringUnion<"text" | "outlined" | "contained", ButtonPropsVariantOverrides>'.
+src/components/userinterface/FilterComp.tsx(45,5): error TS2554: Expected 1 arguments, but got 0.
+src/components/userinterface/GetOTP.tsx(50,16): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & GridOwnProps & CommonProps & Omit<any, "className" | ... 120 more ... | "zeroMinWidth">): Element', gave the following error.
+    Property 'component' is missing in type '{ children: Element[]; item: true; xs: number; style: { display: "flex"; justifyContent: "center"; alignItems: "center"; flexDirection: "column"; }; fullWidth: true; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<GridTypeMap<{}, "div">>): Element', gave the following error.
+    Type '{ children: Element[]; item: true; xs: number; style: { display: "flex"; justifyContent: "center"; alignItems: "center"; flexDirection: "column"; }; fullWidth: true; }' is not assignable to type 'IntrinsicAttributes & GridOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "className" | ... 120 more ... | "zeroMinWidth">'.
+      Property 'fullWidth' does not exist on type 'IntrinsicAttributes & GridOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "className" | ... 120 more ... | "zeroMinWidth">'.
+src/components/userinterface/GetOTP.tsx(71,16): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & GridOwnProps & CommonProps & Omit<any, "className" | ... 120 more ... | "zeroMinWidth">): Element', gave the following error.
+    Property 'component' is missing in type '{ children: Element[]; item: true; xs: number; fullWidth: true; style: { display: "flex"; justifyContent: "center"; alignItems: "center"; }; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<GridTypeMap<{}, "div">>): Element', gave the following error.
+    Type '{ children: Element[]; item: true; xs: number; fullWidth: true; style: { display: "flex"; justifyContent: "center"; alignItems: "center"; }; }' is not assignable to type 'IntrinsicAttributes & GridOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "className" | ... 120 more ... | "zeroMinWidth">'.
+      Property 'fullWidth' does not exist on type 'IntrinsicAttributes & GridOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "className" | ... 120 more ... | "zeroMinWidth">'.
+src/components/userinterface/Header.tsx(216,12): error TS2322: Type '{ background: string; padding: string; display: string; flexDirection: string; alignItems: string; gap: number; }' is not assignable to type 'CSSProperties'.
+  Types of property 'flexDirection' are incompatible.
+    Type 'string' is not assignable to type 'FlexDirection'.
+src/components/userinterface/LogInDetails.tsx(65,16): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & GridOwnProps & CommonProps & Omit<any, "className" | ... 120 more ... | "zeroMinWidth">): Element', gave the following error.
+    Property 'component' is missing in type '{ children: Element[]; item: true; xs: number; fullWidth: true; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<GridTypeMap<{}, "div">>): Element', gave the following error.
+    Type '{ children: Element[]; item: true; xs: number; fullWidth: true; }' is not assignable to type 'IntrinsicAttributes & GridOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "className" | ... 120 more ... | "zeroMinWidth">'.
+      Property 'fullWidth' does not exist on type 'IntrinsicAttributes & GridOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "className" | ... 120 more ... | "zeroMinWidth">'.
+src/components/userinterface/LogInDetails.tsx(103,16): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & GridOwnProps & CommonProps & Omit<any, "className" | ... 120 more ... | "zeroMinWidth">): Element', gave the following error.
+    Property 'component' is missing in type '{ children: Element[]; item: true; xs: number; fullWidth: true; style: { display: "flex"; justifyContent: "center"; alignItems: "center"; flexDirection: "column"; }; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<GridTypeMap<{}, "div">>): Element', gave the following error.
+    Type '{ children: Element[]; item: true; xs: number; fullWidth: true; style: { display: "flex"; justifyContent: "center"; alignItems: "center"; flexDirection: "column"; }; }' is not assignable to type 'IntrinsicAttributes & GridOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "className" | ... 120 more ... | "zeroMinWidth">'.
+      Property 'fullWidth' does not exist on type 'IntrinsicAttributes & GridOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "className" | ... 120 more ... | "zeroMinWidth">'.
+src/components/userinterface/LogInDetails.tsx(124,16): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & GridOwnProps & CommonProps & Omit<any, "className" | ... 120 more ... | "zeroMinWidth">): Element', gave the following error.
+    Property 'component' is missing in type '{ children: Element[]; item: true; xs: number; fullWidth: true; style: { display: "flex"; justifyContent: "center"; alignItems: "center"; }; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<GridTypeMap<{}, "div">>): Element', gave the following error.
+    Type '{ children: Element[]; item: true; xs: number; fullWidth: true; style: { display: "flex"; justifyContent: "center"; alignItems: "center"; }; }' is not assignable to type 'IntrinsicAttributes & GridOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "className" | ... 120 more ... | "zeroMinWidth">'.
+      Property 'fullWidth' does not exist on type 'IntrinsicAttributes & GridOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "className" | ... 120 more ... | "zeroMinWidth">'.
+src/components/userinterface/LoginOTP.tsx(62,16): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & GridOwnProps & CommonProps & Omit<any, "className" | ... 120 more ... | "zeroMinWidth">): Element', gave the following error.
+    Property 'component' is missing in type '{ children: Element[]; item: true; xs: number; fullWidth: true; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<GridTypeMap<{}, "div">>): Element', gave the following error.
+    Type '{ children: Element[]; item: true; xs: number; fullWidth: true; }' is not assignable to type 'IntrinsicAttributes & GridOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "className" | ... 120 more ... | "zeroMinWidth">'.
+      Property 'fullWidth' does not exist on type 'IntrinsicAttributes & GridOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "className" | ... 120 more ... | "zeroMinWidth">'.
+src/components/userinterface/LoginOTP.tsx(87,19): error TS2322: Type '{ style: { fontSize: number; fontWeight: "bold"; }; id: string; variant: string; placeholder: string; fullWidth: true; onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement, Element>) => void; }' is not assignable to type 'IntrinsicAttributes & InputProps'.
+  Property 'variant' does not exist on type 'IntrinsicAttributes & InputProps'.
+src/components/userinterface/PaymentUI.tsx(25,25): error TS2339: Property 'qty' does not exist on type 'unknown'.
+src/components/userinterface/PaymentUI.tsx(25,42): error TS2339: Property 'price' does not exist on type 'unknown'.
+src/components/userinterface/PaymentUI.tsx(26,12): error TS2365: Operator '+' cannot be applied to types 'unknown' and 'number'.
+src/components/userinterface/PaymentUI.tsx(30,25): error TS2339: Property 'qty' does not exist on type 'unknown'.
+src/components/userinterface/PaymentUI.tsx(30,43): error TS2339: Property 'offerprice' does not exist on type 'unknown'.
+src/components/userinterface/PaymentUI.tsx(30,73): error TS2339: Property 'offerprice' does not exist on type 'unknown'.
+src/components/userinterface/PaymentUI.tsx(30,97): error TS2339: Property 'price' does not exist on type 'unknown'.
+src/components/userinterface/PaymentUI.tsx(31,12): error TS2365: Operator '+' cannot be applied to types 'unknown' and 'number'.
+src/components/userinterface/PaymentUI.tsx(34,21): error TS2362: The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+src/components/userinterface/PaymentUI.tsx(34,35): error TS2363: The right-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+src/components/userinterface/PaymentUI.tsx(35,19): error TS2362: The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+src/components/userinterface/PaymentUI.tsx(134,24): error TS2322: Type 'unknown' is not assignable to type 'ReactNode'.
+src/components/userinterface/ProductCard.tsx(94,42): error TS2872: This kind of expression is always truthy.
+src/components/userinterface/ProductCard.tsx(138,19): error TS2872: This kind of expression is always truthy.
+src/components/userinterface/ProductCard.tsx(140,21): error TS2872: This kind of expression is always truthy.
+src/components/userinterface/ProductCard.tsx(269,17): error TS2339: Property 'slickNext' does not exist on type 'unknown'.
+src/components/userinterface/ProductCard.tsx(273,17): error TS2339: Property 'slickPrev' does not exist on type 'unknown'.
+src/components/userinterface/ProductCard.tsx(306,17): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: Settings): Slider', gave the following error.
+    Type 'RefObject<unknown>' is not assignable to type 'Ref<Slider>'.
+      Type 'RefObject<unknown>' is not assignable to type 'RefObject<Slider>'.
+        Type '{}' is missing the following properties from type 'Slider': slickNext, slickPause, slickPlay, slickPrev, and 7 more.
+  Overload 2 of 2, '(props: Settings, context: any): Slider', gave the following error.
+    Type 'RefObject<unknown>' is not assignable to type 'Ref<Slider>'.
+      Type 'RefObject<unknown>' is not assignable to type 'RefObject<Slider>'.
+        Type '{}' is missing the following properties from type 'Slider': slickNext, slickPause, slickPlay, slickPrev, and 7 more.
+src/components/userinterface/ProductCard2.tsx(115,12): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: Settings): Slider', gave the following error.
+    Type '{ children: any; dots: boolean; infinite: boolean; speed: number; slidesToShow: number; slidesToScroll: number; autoplay: string; responsive: { breakpoint: number; settings: { slidesToShow: number; }; }[]; }' is not assignable to type 'Readonly<Settings>'.
+      Types of property 'autoplay' are incompatible.
+        Type 'string' is not assignable to type 'boolean'.
+  Overload 2 of 2, '(props: Settings, context: any): Slider', gave the following error.
+    Type '{ children: any; dots: boolean; infinite: boolean; speed: number; slidesToShow: number; slidesToScroll: number; autoplay: string; responsive: { breakpoint: number; settings: { slidesToShow: number; }; }[]; }' is not assignable to type 'Readonly<Settings>'.
+      Types of property 'autoplay' are incompatible.
+        Type 'string' is not assignable to type 'boolean'.
+src/components/userinterface/ProductListing.tsx(96,38): error TS2872: This kind of expression is always truthy.
+src/components/userinterface/ProductListing.tsx(140,15): error TS2872: This kind of expression is always truthy.
+src/components/userinterface/ProductListing.tsx(142,15): error TS2872: This kind of expression is always truthy.
+src/components/userinterface/ProductPicture.tsx(79,21): error TS2339: Property 'slickNext' does not exist on type 'unknown'.
+src/components/userinterface/ProductPicture.tsx(82,19): error TS2339: Property 'slickPrev' does not exist on type 'unknown'.
+src/components/userinterface/ProductPicture.tsx(97,25): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: Settings): Slider', gave the following error.
+    Type 'RefObject<unknown>' is not assignable to type 'Ref<Slider>'.
+      Type 'RefObject<unknown>' is not assignable to type 'RefObject<Slider>'.
+        Type '{}' is missing the following properties from type 'Slider': slickNext, slickPause, slickPlay, slickPrev, and 7 more.
+  Overload 2 of 2, '(props: Settings, context: any): Slider', gave the following error.
+    Type 'RefObject<unknown>' is not assignable to type 'Ref<Slider>'.
+      Type 'RefObject<unknown>' is not assignable to type 'RefObject<Slider>'.
+        Type '{}' is missing the following properties from type 'Slider': slickNext, slickPause, slickPlay, slickPrev, and 7 more.
+src/components/userinterface/RegistrationPage.tsx(61,312): error TS1117: An object literal cannot have multiple properties with the same name.
+src/components/userinterface/RegistrationPage.tsx(62,320): error TS1117: An object literal cannot have multiple properties with the same name.
+src/components/userinterface/RegistrationPage.tsx(63,318): error TS1117: An object literal cannot have multiple properties with the same name.
+src/components/userinterface/RegistrationPage.tsx(64,314): error TS1117: An object literal cannot have multiple properties with the same name.
+src/components/userinterface/SliderComponent.tsx(18,43): error TS2339: Property 'picture' does not exist on type 'unknown'.
+src/components/userinterface/SliderComponent.tsx(85,19): error TS2339: Property 'slickNext' does not exist on type 'unknown'.
+src/components/userinterface/SliderComponent.tsx(88,17): error TS2339: Property 'slickPrev' does not exist on type 'unknown'.
+src/components/userinterface/SliderComponent.tsx(96,21): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: Settings): Slider', gave the following error.
+    Type 'RefObject<unknown>' is not assignable to type 'Ref<Slider>'.
+      Type 'RefObject<unknown>' is not assignable to type 'RefObject<Slider>'.
+        Type '{}' is missing the following properties from type 'Slider': slickNext, slickPause, slickPlay, slickPrev, and 7 more.
+  Overload 2 of 2, '(props: Settings, context: any): Slider', gave the following error.
+    Type 'RefObject<unknown>' is not assignable to type 'Ref<Slider>'.
+      Type 'RefObject<unknown>' is not assignable to type 'RefObject<Slider>'.
+        Type '{}' is missing the following properties from type 'Slider': slickNext, slickPause, slickPlay, slickPrev, and 7 more.
+src/context/AuthContext.tsx(81,24): error TS2339: Property 'username' does not exist on type 'unknown'.
+src/screens/admin/AdminDashboard.tsx(62,8): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & GridOwnProps & CommonProps & Omit<any, "className" | ... 120 more ... | "zeroMinWidth">): Element', gave the following error.
+    Property 'component' is missing in type '{ children: Element[]; container: true; spaces: number; style: { paddingInlineStart: number; }; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<GridTypeMap<{}, "div">>): Element', gave the following error.
+    Type '{ children: Element[]; container: true; spaces: number; style: { paddingInlineStart: number; }; }' is not assignable to type 'IntrinsicAttributes & GridOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "className" | ... 120 more ... | "zeroMinWidth">'.
+      Property 'spaces' does not exist on type 'IntrinsicAttributes & GridOwnProps & CommonProps & Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "className" | ... 120 more ... | "zeroMinWidth">'.
+src/screens/admin/AdminDashboard.tsx(65,14): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & BoxOwnProps<Theme> & Omit<any, keyof BoxOwnProps<Theme>>): Element', gave the following error.
+    Property 'component' is missing in type '{ children: Element[]; sx: { padding: number; display: "flex"; flexDirection: "column"; justifyContent: "center"; alignItems: "center"; margin: number; }; style: { padding: number; display: string; flexDirection: string; justifyContent: string; alignItems: string; margin: number; }; }' but required in type '{ component: ElementType<any, keyof IntrinsicElements>; }'.
+  Overload 2 of 2, '(props: DefaultComponentProps<BoxTypeMap<{}, "div", Theme>>): Element', gave the following error.
+    Type '{ padding: number; display: string; flexDirection: string; justifyContent: string; alignItems: string; margin: number; }' is not assignable to type 'CSSProperties'.
+      Types of property 'flexDirection' are incompatible.
+        Type 'string' is not assignable to type 'FlexDirection'.
+src/screens/admin/Banners.tsx(60,18): error TS2345: Argument of type 'undefined[]' is not assignable to parameter of type 'SetStateAction<{ file: any[]; bytes: string; }>'.
+src/screens/admin/Banners.tsx(93,13): error TS2339: Property 'info' does not exist on type '{ (message: Message, opts?: Partial<Pick<Toast, "className" | "style" | "position" | "id" | "icon" | "duration" | "ariaProps" | "iconTheme" | "toasterId" | "removeDelay">>): string; ... 8 more ...; promise<T>(promise: Promise<...> | (() => Promise<...>), msgs: { ...; }, opts?: DefaultToastOptions): Promise<...>; }'.
+src/screens/admin/Banners.tsx(113,17): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & AvatarOwnProps & AvatarSlotsAndSlotProps & CommonProps & Omit<...>): Element', gave the following error.
+    Type '"Rounded"' is not assignable to type 'OverridableStringUnion<"square" | "rounded" | "circular", AvatarPropsVariantOverrides>'. Did you mean '"rounded"'?
+  Overload 2 of 2, '(props: DefaultComponentProps<AvatarTypeMap<{}, "div">>): Element', gave the following error.
+    Type '"Rounded"' is not assignable to type 'OverridableStringUnion<"square" | "rounded" | "circular", AvatarPropsVariantOverrides>'. Did you mean '"rounded"'?
+src/screens/admin/Banners.tsx(141,30): error TS2339: Property 'bannerType' does not exist on type '{}'.
+src/screens/admin/Banners.tsx(149,22): error TS2339: Property 'bannerType' does not exist on type '{}'.
+src/screens/admin/Banners.tsx(159,26): error TS2339: Property 'bannerType' does not exist on type '{}'.
+src/screens/admin/Banners.tsx(175,30): error TS2339: Property 'brand' does not exist on type '{}'.
+src/screens/admin/Banners.tsx(183,22): error TS2339: Property 'brand' does not exist on type '{}'.
+src/screens/admin/Banners.tsx(193,26): error TS2339: Property 'brand' does not exist on type '{}'.
+src/screens/admin/Banners.tsx(213,20): error TS2339: Property 'picture' does not exist on type '{}'.
+src/screens/admin/Banners.tsx(217,24): error TS2339: Property 'picture' does not exist on type '{}'.
+src/screens/admin/Brand.tsx(85,100): error TS2339: Property 'brand' does not exist on type '{}'.
+src/screens/admin/Brand.tsx(85,176): error TS2339: Property 'brand' does not exist on type '{}'.
+src/screens/admin/Brand.tsx(93,28): error TS2339: Property 'picture' does not exist on type '{}'.
+src/screens/admin/Brand.tsx(93,122): error TS2339: Property 'picture' does not exist on type '{}'.
+src/screens/admin/Categories.tsx(45,75): error TS2554: Expected 2 arguments, but got 3.
+src/screens/admin/Categories.tsx(76,105): error TS2339: Property 'category' does not exist on type '{}'.
+src/screens/admin/Categories.tsx(76,200): error TS2339: Property 'category' does not exist on type '{}'.
+src/screens/admin/Categories.tsx(84,24): error TS2339: Property 'picture' does not exist on type '{}'.
+src/screens/admin/Categories.tsx(84,99): error TS2339: Property 'picture' does not exist on type '{}'.
+src/screens/admin/Concern.tsx(72,103): error TS2339: Property 'concern' does not exist on type '{}'.
+src/screens/admin/Concern.tsx(72,197): error TS2339: Property 'concern' does not exist on type '{}'.
+src/screens/admin/Concern.tsx(80,24): error TS2339: Property 'picture' does not exist on type '{}'.
+src/screens/admin/Concern.tsx(80,99): error TS2339: Property 'picture' does not exist on type '{}'.
+src/screens/admin/DisplayAllBrands.tsx(56,16): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(options: SweetAlertOptions): Promise<SweetAlertResult<any>>', gave the following error.
+    Type 'string' is not assignable to type 'boolean'.
+  Overload 2 of 2, '(title?: string, html?: string, icon?: SweetAlertIcon): Promise<SweetAlertResult<any>>', gave the following error.
+    Argument of type '{ icon: string; title: any; timer: number; toast: string; }' is not assignable to parameter of type 'string'.
+src/screens/admin/DisplayAllBrands.tsx(66,16): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(options: SweetAlertOptions): Promise<SweetAlertResult<any>>', gave the following error.
+    Type 'string' is not assignable to type 'boolean'.
+  Overload 2 of 2, '(title?: string, html?: string, icon?: SweetAlertIcon): Promise<SweetAlertResult<any>>', gave the following error.
+    Argument of type '{ icon: string; title: any; timer: number; toast: string; }' is not assignable to parameter of type 'string'.
+src/screens/admin/DisplayAllBrands.tsx(87,12): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(options: SweetAlertOptions): Promise<SweetAlertResult<any>>', gave the following error.
+    Type 'string' is not assignable to type 'boolean'.
+  Overload 2 of 2, '(title?: string, html?: string, icon?: SweetAlertIcon): Promise<SweetAlertResult<any>>', gave the following error.
+    Argument of type '{ icon: string; title: any; timer: number; toast: string; }' is not assignable to parameter of type 'string'.
+src/screens/admin/DisplayAllBrands.tsx(97,12): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(options: SweetAlertOptions): Promise<SweetAlertResult<any>>', gave the following error.
+    Type 'string' is not assignable to type 'boolean'.
+  Overload 2 of 2, '(title?: string, html?: string, icon?: SweetAlertIcon): Promise<SweetAlertResult<any>>', gave the following error.
+    Argument of type '{ icon: string; title: any; timer: number; toast: string; }' is not assignable to parameter of type 'string'.
+src/screens/admin/DisplayAllBrands.tsx(174,22): error TS2741: Property 'page' is missing in type '{ title: string; listicon: string; logo: string; }' but required in type '{ title: any; logo: any; listicon: any; page: any; }'.
+src/screens/admin/DisplayAllBrands.tsx(178,100): error TS2339: Property 'brand' does not exist on type '{}'.
+src/screens/admin/DisplayAllBrands.tsx(178,176): error TS2339: Property 'brand' does not exist on type '{}'.
+src/screens/admin/DisplayAllBrands.tsx(249,10): error TS2322: Type '{ height: string; width: number; background: string; borderRadius: number; padding: number; maxHeight: string; overflowY: string; }' is not assignable to type 'CSSProperties'.
+  Types of property 'overflowY' are incompatible.
+    Type 'string' is not assignable to type 'OverflowY'.
+src/screens/admin/DisplayAllCategory.tsx(182,14): error TS2741: Property 'page' is missing in type '{ title: string; logo: string; listicon: string; }' but required in type '{ title: any; logo: any; listicon: any; page: any; }'.
+src/screens/admin/DisplayAllCategory.tsx(186,98): error TS2339: Property 'category' does not exist on type '{}'.
+src/screens/admin/DisplayAllCategory.tsx(186,191): error TS2339: Property 'category' does not exist on type '{}'.
+src/screens/admin/DisplayAllCategory.tsx(195,24): error TS2339: Property 'picture' does not exist on type '{}'.
+src/screens/admin/DisplayAllCategory.tsx(195,99): error TS2339: Property 'picture' does not exist on type '{}'.
+src/screens/admin/DisplayAllConcern.tsx(174,14): error TS2741: Property 'page' is missing in type '{ title: string; logo: string; listicon: string; }' but required in type '{ title: any; logo: any; listicon: any; page: any; }'.
+src/screens/admin/DisplayAllConcern.tsx(178,96): error TS2339: Property 'concern' does not exist on type '{}'.
+src/screens/admin/DisplayAllConcern.tsx(178,188): error TS2339: Property 'concern' does not exist on type '{}'.
+src/screens/admin/DisplayAllConcern.tsx(187,24): error TS2339: Property 'picture' does not exist on type '{}'.
+src/screens/admin/DisplayAllConcern.tsx(187,99): error TS2339: Property 'picture' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(99,5): error TS2554: Expected 1 arguments, but got 0.
+src/screens/admin/DisplayAllProductDetails.tsx(122,5): error TS2554: Expected 1 arguments, but got 0.
+src/screens/admin/DisplayAllProductDetails.tsx(144,5): error TS2554: Expected 1 arguments, but got 0.
+src/screens/admin/DisplayAllProductDetails.tsx(170,7): error TS2322: Type 'unknown[]' is not assignable to type 'string'.
+src/screens/admin/DisplayAllProductDetails.tsx(171,7): error TS2322: Type 'unknown[]' is not assignable to type 'string'.
+src/screens/admin/DisplayAllProductDetails.tsx(232,12): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(options: SweetAlertOptions): Promise<SweetAlertResult<any>>', gave the following error.
+    Type 'string' is not assignable to type 'boolean'.
+  Overload 2 of 2, '(title?: string, html?: string, icon?: SweetAlertIcon): Promise<SweetAlertResult<any>>', gave the following error.
+    Argument of type '{ icon: string; title: any; timer: number; toast: string; }' is not assignable to parameter of type 'string'.
+src/screens/admin/DisplayAllProductDetails.tsx(239,12): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(options: SweetAlertOptions): Promise<SweetAlertResult<any>>', gave the following error.
+    Type 'string' is not assignable to type 'boolean'.
+  Overload 2 of 2, '(title?: string, html?: string, icon?: SweetAlertIcon): Promise<SweetAlertResult<any>>', gave the following error.
+    Argument of type '{ icon: string; title: any; timer: number; toast: string; }' is not assignable to parameter of type 'string'.
+src/screens/admin/DisplayAllProductDetails.tsx(251,40): error TS2769: No overload matches this call.
+  Overload 1 of 3, '(name: string, value: string | Blob): void', gave the following error.
+    Argument of type 'any[]' is not assignable to parameter of type 'string | Blob'.
+      Type 'any[]' is missing the following properties from type 'Blob': size, type, arrayBuffer, bytes, and 2 more.
+  Overload 2 of 3, '(name: string, value: string): void', gave the following error.
+    Argument of type 'any[]' is not assignable to parameter of type 'string'.
+  Overload 3 of 3, '(name: string, blobValue: Blob, filename?: string): void', gave the following error.
+    Argument of type 'any[]' is not assignable to parameter of type 'Blob'.
+      Type 'any[]' is missing the following properties from type 'Blob': size, type, arrayBuffer, bytes, and 2 more.
+src/screens/admin/DisplayAllProductDetails.tsx(264,12): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(options: SweetAlertOptions): Promise<SweetAlertResult<any>>', gave the following error.
+    Type 'string' is not assignable to type 'boolean'.
+  Overload 2 of 2, '(title?: string, html?: string, icon?: SweetAlertIcon): Promise<SweetAlertResult<any>>', gave the following error.
+    Argument of type '{ icon: string; title: any; timer: number; toast: string; }' is not assignable to parameter of type 'string'.
+src/screens/admin/DisplayAllProductDetails.tsx(272,12): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(options: SweetAlertOptions): Promise<SweetAlertResult<any>>', gave the following error.
+    Type 'string' is not assignable to type 'boolean'.
+  Overload 2 of 2, '(title?: string, html?: string, icon?: SweetAlertIcon): Promise<SweetAlertResult<any>>', gave the following error.
+    Argument of type '{ icon: string; title: any; timer: number; toast: string; }' is not assignable to parameter of type 'string'.
+src/screens/admin/DisplayAllProductDetails.tsx(364,39): error TS2339: Property 'filter' does not exist on type 'string'.
+src/screens/admin/DisplayAllProductDetails.tsx(370,27): error TS2322: Type '{ children: Element[]; open: boolean; close: () => void; maxWidth: "md"; }' is not assignable to type 'IntrinsicAttributes & DialogProps'.
+  Property 'close' does not exist on type 'IntrinsicAttributes & DialogProps'. Did you mean 'onClose'?
+src/screens/admin/DisplayAllProductDetails.tsx(389,34): error TS2339: Property 'categoryId' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(395,26): error TS2339: Property 'categoryId' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(405,30): error TS2339: Property 'categoryId' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(421,34): error TS2339: Property 'subCategoryId' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(425,26): error TS2339: Property 'subCategoryId' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(435,30): error TS2339: Property 'subCategoryId' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(451,34): error TS2339: Property 'brandId' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(455,26): error TS2339: Property 'brandId' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(465,30): error TS2339: Property 'brandId' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(481,34): error TS2339: Property 'productId' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(485,26): error TS2339: Property 'productId' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(495,30): error TS2339: Property 'productId' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(507,32): error TS2339: Property 'productSubName' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(516,30): error TS2339: Property 'productSubName' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(529,32): error TS2339: Property 'description' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(538,30): error TS2339: Property 'description' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(551,32): error TS2339: Property 'weight' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(560,30): error TS2339: Property 'weight' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(577,34): error TS2339: Property 'weightType' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(583,26): error TS2339: Property 'weightType' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(593,30): error TS2339: Property 'weightType' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(609,34): error TS2339: Property 'Type' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(621,26): error TS2339: Property 'Type' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(631,30): error TS2339: Property 'Type' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(647,34): error TS2339: Property 'packaging' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(653,26): error TS2339: Property 'packaging' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(663,30): error TS2339: Property 'packaging' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(675,32): error TS2339: Property 'quantity' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(684,30): error TS2339: Property 'quantity' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(697,32): error TS2339: Property 'price' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(706,30): error TS2339: Property 'price' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(719,32): error TS2339: Property 'offerPrice' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(728,30): error TS2339: Property 'offerPrice' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(745,34): error TS2339: Property 'offerType' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(753,26): error TS2339: Property 'offerType' does not exist on type '{}'.
+src/screens/admin/DisplayAllProductDetails.tsx(763,30): error TS2339: Property 'offerType' does not exist on type '{}'.
+src/screens/admin/DisplayAllProducts.tsx(53,26): error TS2554: Expected 1 arguments, but got 0.
+src/screens/admin/DisplayAllProducts.tsx(112,18): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(options: SweetAlertOptions): Promise<SweetAlertResult<any>>', gave the following error.
+    Type 'string' is not assignable to type 'boolean'.
+  Overload 2 of 2, '(title?: string, html?: string, icon?: SweetAlertIcon): Promise<SweetAlertResult<any>>', gave the following error.
+    Argument of type '{ icon: string; title: any; timer: number; toast: string; }' is not assignable to parameter of type 'string'.
+src/screens/admin/DisplayAllProducts.tsx(122,18): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(options: SweetAlertOptions): Promise<SweetAlertResult<any>>', gave the following error.
+    Type 'string' is not assignable to type 'boolean'.
+  Overload 2 of 2, '(title?: string, html?: string, icon?: SweetAlertIcon): Promise<SweetAlertResult<any>>', gave the following error.
+    Argument of type '{ icon: string; title: any; timer: number; toast: string; }' is not assignable to parameter of type 'string'.
+src/screens/admin/DisplayAllProducts.tsx(139,18): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(options: SweetAlertOptions): Promise<SweetAlertResult<any>>', gave the following error.
+    Type 'string' is not assignable to type 'boolean'.
+  Overload 2 of 2, '(title?: string, html?: string, icon?: SweetAlertIcon): Promise<SweetAlertResult<any>>', gave the following error.
+    Argument of type '{ icon: string; title: any; timer: number; toast: string; }' is not assignable to parameter of type 'string'.
+src/screens/admin/DisplayAllProducts.tsx(149,18): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(options: SweetAlertOptions): Promise<SweetAlertResult<any>>', gave the following error.
+    Type 'string' is not assignable to type 'boolean'.
+  Overload 2 of 2, '(title?: string, html?: string, icon?: SweetAlertIcon): Promise<SweetAlertResult<any>>', gave the following error.
+    Argument of type '{ icon: string; title: any; timer: number; toast: string; }' is not assignable to parameter of type 'string'.
+src/screens/admin/DisplayAllProducts.tsx(209,23): error TS2353: Object literal may only specify known properties, and 'file' does not exist in type '(prevState: string) => string'.
+src/screens/admin/DisplayAllProducts.tsx(218,10): error TS2322: Type '{ children: Element[]; open: boolean; close: () => void; maxWidth: "md"; }' is not assignable to type 'IntrinsicAttributes & DialogProps'.
+  Property 'close' does not exist on type 'IntrinsicAttributes & DialogProps'. Did you mean 'onClose'?
+src/screens/admin/DisplayAllProducts.tsx(224,18): error TS2741: Property 'page' is missing in type '{ title: string; logo: string; listicon: string; }' but required in type '{ title: any; logo: any; listicon: any; page: any; }'.
+src/screens/admin/DisplayAllProducts.tsx(233,35): error TS2339: Property 'categoryId' does not exist on type '{}'.
+src/screens/admin/DisplayAllProducts.tsx(239,28): error TS2339: Property 'categoryId' does not exist on type '{}'.
+src/screens/admin/DisplayAllProducts.tsx(239,122): error TS2339: Property 'categoryId' does not exist on type '{}'.
+src/screens/admin/DisplayAllProducts.tsx(249,34): error TS2339: Property 'subCategoryId' does not exist on type '{}'.
+src/screens/admin/DisplayAllProducts.tsx(254,28): error TS2339: Property 'subCategoryId' does not exist on type '{}'.
+src/screens/admin/DisplayAllProducts.tsx(254,125): error TS2339: Property 'subCategoryId' does not exist on type '{}'.
+src/screens/admin/DisplayAllProducts.tsx(264,34): error TS2339: Property 'brandId' does not exist on type '{}'.
+src/screens/admin/DisplayAllProducts.tsx(268,28): error TS2339: Property 'brandId' does not exist on type '{}'.
+src/screens/admin/DisplayAllProducts.tsx(268,119): error TS2339: Property 'brandId' does not exist on type '{}'.
+src/screens/admin/DisplayAllProducts.tsx(273,100): error TS2339: Property 'product' does not exist on type '{}'.
+src/screens/admin/DisplayAllProducts.tsx(273,179): error TS2339: Property 'product' does not exist on type '{}'.
+src/screens/admin/DisplayAllProducts.tsx(277,180): error TS2339: Property 'description' does not exist on type '{}'.
+src/screens/admin/DisplayAllProducts.tsx(277,215): error TS2339: Property 'description' does not exist on type '{}'.
+src/screens/admin/DisplayAllProducts.tsx(358,14): error TS2322: Type '{ width: number; height: string; backgroundColor: string; borderRadius: number; padding: number; boxShadow: string; maxHeight: string; overflowY: string; }' is not assignable to type 'CSSProperties'.
+  Types of property 'overflowY' are incompatible.
+    Type 'string' is not assignable to type 'OverflowY'.
+src/screens/admin/DisplayAllSubCategory.tsx(65,7): error TS2554: Expected 0-1 arguments, but got 2.
+src/screens/admin/DisplayAllSubCategory.tsx(72,18): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(options: SweetAlertOptions): Promise<SweetAlertResult<any>>', gave the following error.
+    Type 'string' is not assignable to type 'boolean'.
+  Overload 2 of 2, '(title?: string, html?: string, icon?: SweetAlertIcon): Promise<SweetAlertResult<any>>', gave the following error.
+    Argument of type '{ icon: string; title: any; timer: number; toast: string; }' is not assignable to parameter of type 'string'.
+src/screens/admin/DisplayAllSubCategory.tsx(82,18): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(options: SweetAlertOptions): Promise<SweetAlertResult<any>>', gave the following error.
+    Type 'string' is not assignable to type 'boolean'.
+  Overload 2 of 2, '(title?: string, html?: string, icon?: SweetAlertIcon): Promise<SweetAlertResult<any>>', gave the following error.
+    Argument of type '{ icon: string; title: any; timer: number; toast: string; }' is not assignable to parameter of type 'string'.
+src/screens/admin/DisplayAllSubCategory.tsx(99,18): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(options: SweetAlertOptions): Promise<SweetAlertResult<any>>', gave the following error.
+    Type 'string' is not assignable to type 'boolean'.
+  Overload 2 of 2, '(title?: string, html?: string, icon?: SweetAlertIcon): Promise<SweetAlertResult<any>>', gave the following error.
+    Argument of type '{ icon: string; title: any; timer: number; toast: string; }' is not assignable to parameter of type 'string'.
+src/screens/admin/DisplayAllSubCategory.tsx(109,18): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(options: SweetAlertOptions): Promise<SweetAlertResult<any>>', gave the following error.
+    Type 'string' is not assignable to type 'boolean'.
+  Overload 2 of 2, '(title?: string, html?: string, icon?: SweetAlertIcon): Promise<SweetAlertResult<any>>', gave the following error.
+    Argument of type '{ icon: string; title: any; timer: number; toast: string; }' is not assignable to parameter of type 'string'.
+src/screens/admin/DisplayAllSubCategory.tsx(174,8): error TS2322: Type '{ children: Element[]; open: boolean; close: () => void; maxWidth: "md"; }' is not assignable to type 'IntrinsicAttributes & DialogProps'.
+  Property 'close' does not exist on type 'IntrinsicAttributes & DialogProps'. Did you mean 'onClose'?
+src/screens/admin/DisplayAllSubCategory.tsx(182,22): error TS2739: Type '{ title: string; listicon: string; }' is missing the following properties from type '{ title: any; logo: any; listicon: any; page: any; }': logo, page
+src/screens/admin/DisplayAllSubCategory.tsx(190,58): error TS2345: Argument of type 'string' is not assignable to parameter of type '(prevState: undefined) => undefined'.
+src/screens/admin/DisplayAllSubCategory.tsx(199,112): error TS2339: Property 'subCategory' does not exist on type '{}'.
+src/screens/admin/DisplayAllSubCategory.tsx(199,192): error TS2339: Property 'subCategory' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(74,24): error TS2554: Expected 0 arguments, but got 1.
+src/screens/admin/ProductDetails.tsx(93,26): error TS2554: Expected 1 arguments, but got 0.
+src/screens/admin/ProductDetails.tsx(126,26): error TS2554: Expected 1 arguments, but got 0.
+src/screens/admin/ProductDetails.tsx(293,24): error TS2345: Argument of type 'undefined[]' is not assignable to parameter of type 'SetStateAction<{ file: any[]; bytes: string; }>'.
+src/screens/admin/ProductDetails.tsx(368,42): error TS2339: Property 'categoryId' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(374,36): error TS2339: Property 'categoryId' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(374,130): error TS2339: Property 'categoryId' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(387,42): error TS2339: Property 'subCategoryId' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(391,36): error TS2339: Property 'subCategoryId' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(391,133): error TS2339: Property 'subCategoryId' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(405,42): error TS2339: Property 'brandId' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(409,36): error TS2339: Property 'brandId' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(409,127): error TS2339: Property 'brandId' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(422,42): error TS2339: Property 'productId' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(426,36): error TS2339: Property 'productId' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(426,129): error TS2339: Property 'productId' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(432,117): error TS2339: Property 'productSubName' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(432,216): error TS2339: Property 'productSubName' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(443,42): error TS2339: Property 'brandId' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(447,36): error TS2339: Property 'concern' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(447,127): error TS2339: Property 'concern' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(459,101): error TS2339: Property 'weight' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(459,192): error TS2339: Property 'weight' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(470,42): error TS2339: Property 'weightType' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(479,36): error TS2339: Property 'weightType' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(479,130): error TS2339: Property 'weightType' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(492,42): error TS2339: Property 'Type' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(512,36): error TS2339: Property 'Type' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(512,124): error TS2339: Property 'Type' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(525,42): error TS2339: Property 'packaging' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(532,36): error TS2339: Property 'packaging' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(532,129): error TS2339: Property 'packaging' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(538,109): error TS2339: Property 'quantity' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(538,202): error TS2339: Property 'quantity' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(542,103): error TS2339: Property 'price' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(542,193): error TS2339: Property 'price' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(546,113): error TS2339: Property 'offerPrice' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(546,208): error TS2339: Property 'offerPrice' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(557,42): error TS2339: Property 'offerType' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(563,36): error TS2339: Property 'offerType' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(563,129): error TS2339: Property 'offerType' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(573,24): error TS2339: Property 'picture' does not exist on type '{}'.
+src/screens/admin/ProductDetails.tsx(573,99): error TS2339: Property 'picture' does not exist on type '{}'.
+src/screens/admin/Products.tsx(55,26): error TS2554: Expected 1 arguments, but got 0.
+src/screens/admin/Products.tsx(184,42): error TS2339: Property 'categoryId' does not exist on type '{}'.
+src/screens/admin/Products.tsx(190,36): error TS2339: Property 'categoryId' does not exist on type '{}'.
+src/screens/admin/Products.tsx(190,130): error TS2339: Property 'categoryId' does not exist on type '{}'.
+src/screens/admin/Products.tsx(202,42): error TS2339: Property 'subCategoryId' does not exist on type '{}'.
+src/screens/admin/Products.tsx(206,36): error TS2339: Property 'subCategoryId' does not exist on type '{}'.
+src/screens/admin/Products.tsx(206,133): error TS2339: Property 'subCategoryId' does not exist on type '{}'.
+src/screens/admin/Products.tsx(219,42): error TS2339: Property 'brandId' does not exist on type '{}'.
+src/screens/admin/Products.tsx(223,36): error TS2339: Property 'brandId' does not exist on type '{}'.
+src/screens/admin/Products.tsx(223,127): error TS2339: Property 'brandId' does not exist on type '{}'.
+src/screens/admin/Products.tsx(228,103): error TS2339: Property 'product' does not exist on type '{}'.
+src/screens/admin/Products.tsx(228,197): error TS2339: Property 'product' does not exist on type '{}'.
+src/screens/admin/Products.tsx(232,111): error TS2339: Property 'description' does not exist on type '{}'.
+src/screens/admin/Products.tsx(232,209): error TS2339: Property 'description' does not exist on type '{}'.
+src/screens/admin/Products.tsx(240,24): error TS2339: Property 'picture' does not exist on type '{}'.
+src/screens/admin/Products.tsx(240,99): error TS2339: Property 'picture' does not exist on type '{}'.
+src/screens/admin/Subcategory.tsx(91,20): error TS2345: Argument of type '{ file: string; }' is not assignable to parameter of type 'SetStateAction<{ file: string; bytes: string; }>'.
+  Property 'bytes' is missing in type '{ file: string; }' but required in type '{ file: string; bytes: string; }'.
+src/screens/admin/Subcategory.tsx(119,112): error TS2339: Property 'subCategory' does not exist on type '{}'.
+src/screens/admin/Subcategory.tsx(119,192): error TS2339: Property 'subCategory' does not exist on type '{}'.
+src/screens/admin/Subcategory.tsx(127,28): error TS2339: Property 'picture' does not exist on type '{}'.
+src/screens/admin/Subcategory.tsx(127,119): error TS2339: Property 'picture' does not exist on type '{}'.
