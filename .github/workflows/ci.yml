@@ -30,7 +30,7 @@ jobs:
         run: npm install -g netlify-cli
 
       # 👇 next step (deployment)
-        name: Deploy to Netlify
+      - name: Deploy to Netlify
         run: netlify deploy --prod --dir=dist
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
