@@ -13,6 +13,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { postData } from '../../services/FetchNodeServices';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import { useAuth } from '../../context/AuthContext';
 
 function Copyright(props) {
   return (
@@ -38,6 +39,7 @@ const defaultTheme = createTheme();
 
 export default function AdminLogin() {
   const navigate = useNavigate();
+  const { loginAdmin } = useAuth();
   const [emailid, setEmailId] = useState('');
   const [password, setPassword] = useState('');
 
@@ -47,7 +49,7 @@ export default function AdminLogin() {
       password,
     });
     if (result.status) {
-      localStorage.setItem('ADMIN', JSON.stringify(result.data));
+      loginAdmin(result.data);
       navigate('/admindashboard');
     } else {
       toast.error('Something went wrong!');

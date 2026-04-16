@@ -5,9 +5,11 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import { postData, serverURL } from '../../services/FetchNodeServices';
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 export default function UserInfoProfile() {
-  var { userData } = useAuth();
+  var { userData, logoutUser } = useAuth();
+  const navigate = useNavigate();
 
   const [username, setUsername] = useState(userData?.username);
   const [mobileno, setMobile] = useState(userData?.mobileno);
@@ -92,6 +94,12 @@ export default function UserInfoProfile() {
       toast.error(e);
       console.error(e);
     }
+  };
+
+  const handleLogout = () => {
+    logoutUser();
+    toast.success('Logout Successfully!');
+    navigate('/');
   };
 
   return (
@@ -218,6 +226,7 @@ export default function UserInfoProfile() {
                 padding: '0px 5px',
                 fontSize: matchesSM ? 12 : 13,
               }}
+              onClick={handleLogout}
             >
               Logout
             </Button>

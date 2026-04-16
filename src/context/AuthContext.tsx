@@ -11,6 +11,7 @@ const AuthContext = createContext(null);
 const STORAGE_KEYS = {
   USER: 'user-data',
   CART: 'cart-products',
+  ADMIN: 'ADMIN',
 };
 
 const safeParseJSON = (key, fallback = {}) => {
@@ -27,6 +28,9 @@ export function AuthProvider({ children }) {
   // ── User State ──────────────────────────────────────────────────────────────
   const [user, setUserState] = useState(() => safeParseJSON(STORAGE_KEYS.USER, {}));
 
+  // ── Admin State ─────────────────────────────────────────────────────────────
+  const [admin, setAdminState] = useState(() => safeParseJSON(STORAGE_KEYS.ADMIN, null));
+
   // ── Cart State ──────────────────────────────────────────────────────────────
   const [cart, setCartState] = useState(() => safeParseJSON(STORAGE_KEYS.CART, {}));
 
@@ -34,6 +38,15 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     localStorage.setItem(STORAGE_KEYS.USER, JSON.stringify(user));
   }, [user]);
+
+  // ── Persist admin to localStorage whenever it changes ───────────────────────
+  useEffect(() => {
+    if (admin) {
+      localStorage.setItem(STORAGE_KEYS.ADMIN, JSON.stringify(admin));
+    } else {
+      localStorage.removeItem(STORAGE_KEYS.ADMIN);
+    }
+  }, [admin]);
 
   // ── Persist cart to localStorage whenever it changes ────────────────────────
   useEffect(() => {
@@ -51,6 +64,19 @@ export function AuthProvider({ children }) {
   const logoutUser = useCallback(() => {
     setUserState({});
     localStorage.removeItem(STORAGE_KEYS.USER);
+  }, []);
+
+  // ── Admin Actions ───────────────────────────────────────────────────────────
+
+  /** Admin login: save admin details */
+  const loginAdmin = useCallback((adminData) => {
+    setAdminState(adminData);
+  }, []);
+
+  /** Admin logout: clear admin data */
+  const logoutAdmin = useCallback(() => {
+    setAdminState(null);
+    localStorage.removeItem(STORAGE_KEYS.ADMIN);
   }, []);
 
   // ── Cart Actions ────────────────────────────────────────────────────────────
@@ -105,6 +131,11 @@ export function AuthProvider({ children }) {
     displayName,
     loginUser,
     logoutUser,
+
+    // admin
+    admin,
+    loginAdmin,
+    logoutAdmin,
 
     // cart
     cart,

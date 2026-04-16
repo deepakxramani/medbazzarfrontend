@@ -11,6 +11,8 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import { Routes, Route } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { serverURL } from '../../services/FetchNodeServices';
+import { useAuth } from '../../context/AuthContext';
+import toast from 'react-hot-toast';
 import Categories from './Categories';
 import DisplayAllCategory from './DisplayAllCategory';
 import Subcategory from './Subcategory';
@@ -30,10 +32,16 @@ import DisplayAllConcerns from './DisplayAllConcern';
 
 export default function AdminDashboard(props) {
   const navigate = useNavigate();
-  const adminData = JSON.parse(localStorage.getItem('ADMIN'));
+  const { admin: adminData, logoutAdmin } = useAuth();
 
   const handleVisit = () => {
     navigate('/');
+  };
+
+  const handleLogout = () => {
+    logoutAdmin();
+    toast.success('Logout Successful!');
+    navigate('/adminlogin');
   };
 
   return (
@@ -231,7 +239,7 @@ export default function AdminDashboard(props) {
 
                 <Divider />
                 <ListItem disablePadding>
-                  <ListItemButton>
+                  <ListItemButton onClick={handleLogout}>
                     <ListItemIcon>
                       <DraftsIcon />
                     </ListItemIcon>
