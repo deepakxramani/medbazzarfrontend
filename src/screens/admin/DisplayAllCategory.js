@@ -122,19 +122,19 @@ export default function DisplayAllCategory(){
           confirmButtonText: "Delete",
           denyButtonText: `Don't Delete`
 
-        }).then(async(result) => {
+        }).then(async(swalResult) => {
           /* Read more about isConfirmed, isDenied below */
-          if (result.isConfirmed) {
+          if (swalResult.isConfirmed) {
             var body={categoryid:rowData.categoryid}
-            var result=await postData('category/delete_category_data',body)
-            if(result.status)
+            var deleteResult=await postData('category/delete_category_data',body)
+            if(deleteResult.status)
             {Swal.fire({toast:true,title:"Deleted!", icon:"success"});
             fetchAllCategory()}
             else
             Swal.fire({toast:true,title:"Fail to Delete Record!", icon:"error"});
             
 
-          } else if (result.isDenied) {
+          } else if (swalResult.isDenied) {
             Swal.fire({toast:true,title:"Your Record is safe", icon:"info"});
           }
         });
@@ -225,7 +225,7 @@ export default function DisplayAllCategory(){
             columns={[
               { title: 'Category Id', field: 'categoryid' },
               { title: 'Category Type', field: 'categoryname' },
-              { title: 'Icon', field: 'picture',render:(rowData)=><><img src={`${serverURL}/images/${rowData.picture}`} style={{width:60,height:60,borderRadius:30}}/></>}
+              { title: 'Icon', field: 'picture',render:(rowData)=><><img src={`${serverURL}/images/${rowData.picture}`} alt={rowData.categoryname} style={{width:60,height:60,borderRadius:30}}/></>}
 
                
             ]}

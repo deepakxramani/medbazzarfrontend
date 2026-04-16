@@ -58,10 +58,10 @@ export default function FooterComponent() {
               }}
             >
               <div>
-                <img src={gplay} style={{ width: 120 }} />
+                <img alt={gplay} src={gplay} style={{ width: 120 }} />
               </div>
               <div>
-                <img src={appstore} style={{ width: 128 }} />
+                <img alt={appstore} src={appstore} style={{ width: 128 }} />
               </div>
             </div>
           </Grid>

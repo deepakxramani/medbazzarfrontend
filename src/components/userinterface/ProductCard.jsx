@@ -23,8 +23,6 @@ export default function ProductCard(props) {
   var sld = createRef();
   const [pink, setPink] = useState(false);
 
-  var productRedux = Object.values(productFromRedux);
-
   var product = props?.data;
   var title = props.title;
 
@@ -57,10 +55,10 @@ export default function ProductCard(props) {
   const productDetail = () => {
     return product?.map((item, index) => {
       return (
-        <div key={index} className="product-card">
+        <div key={index} className='product-card'>
           {/* <div style={{display:'inline-block',width:70,backgroundColor:'yellow',clipPath:'polygon(100% 0, 80% 50%, 100% 100%, 0% 100%, 0 50%, 0% 0%)'}}><p style={{fontSize:13,padding:'2px 5px',fontWeight:500}}>20% Off</p></div> */}
           <div
-            className="bookmark"
+            className='bookmark'
             style={{ display: 'flex', justifyContent: 'end', padding: 8 }}
           >
             <div>
@@ -77,7 +75,7 @@ export default function ProductCard(props) {
               )}
             </div>
           </div>
-          <div className="product-image">
+          <div className='product-image'>
             <img
               src={`${serverURL}/images/${item.picture}`}
               alt={item.productname}
@@ -86,11 +84,11 @@ export default function ProductCard(props) {
             {/* <img src={product}/> */}
           </div>
           <div
-            className="product-info"
+            className='product-info'
             onClick={() => handleProductDetail(item)}
           >
             <div
-              className="product-name"
+              className='product-name'
               style={{
                 fontSize: matchesSM ? '12px' : '14px',
                 height: matchesMd ? 35 : 30 || matchesSM ? 30 : 35,
@@ -100,20 +98,20 @@ export default function ProductCard(props) {
               {item.weighttype}
             </div>
             <div
-              className="product-price"
+              className='product-price'
               style={{ marginTop: matchesSM ? 25 : 30 }}
             >
               {/* Conditionally render discount if available */}
-              {item.offerprice != 0 ? (
+              {item.offerprice !== 0 ? (
                 <div>
                   <span
-                    className="product-price-old"
+                    className='product-price-old'
                     style={{ fontSize: matchesMd ? '13px' : '16px' }}
                   >
                     ₹{item.price}
                   </span>
                   <span
-                    className="product-price-new"
+                    className='product-price-new'
                     style={{ fontSize: matchesMd ? '1rem' : '1.2rem' }}
                   >
                     ₹{item.offerprice}
@@ -121,7 +119,7 @@ export default function ProductCard(props) {
                 </div>
               ) : (
                 <span
-                  className="product-price-new"
+                  className='product-price-new'
                   style={{ fontSize: matchesMd ? '1rem' : '1.2rem' }}
                 >
                   ₹{item.price}
@@ -133,15 +131,15 @@ export default function ProductCard(props) {
             style={{ background: '#A0ABBB', width: '90%', margin: '0px auto' }}
           />
           <div
-            className="product-delivery"
+            className='product-delivery'
             style={{
               fontSize: matchesMd
                 ? '0.7rem'
                 : '0.9rem' || matchesSM
-                ? '0.8rem'
-                : '0.9rem' || matchesXS
-                ? '0.1rem'
-                : '0.9rem',
+                  ? '0.8rem'
+                  : '0.9rem' || matchesXS
+                    ? '0.1rem'
+                    : '0.9rem',
             }}
           >
             <WatchLaterIcon
@@ -150,7 +148,7 @@ export default function ProductCard(props) {
             Delivery within{' '}
             <span style={{ marginLeft: 3, fontWeight: 600 }}>1-3 days</span>
           </div>
-          <div className="product-actions">
+          <div className='product-actions'>
             <PlusMinusComp2
               qty={
                 productFromRedux[item?.productdetailid]?.qty === undefined
@@ -165,13 +163,16 @@ export default function ProductCard(props) {
             <button
               style={{
                 background: '#00391c',
-                fontSize: matchesMd?'13px':'14px',
-                width: matchesMd?'50px':'60px',
+                fontSize: matchesMd ? '13px' : '14px',
+                width: matchesMd ? '50px' : '60px',
                 height: matchesSM ? '25px' : '30px',
-                padding: '5px 0px'
+                padding: '5px 0px',
               }}
             >
-              Buy <LocalMallIcon style={{ marginLeft: 5, fontSize: matchesMd?'13px':'14px' }} />
+              Buy{' '}
+              <LocalMallIcon
+                style={{ marginLeft: 5, fontSize: matchesMd ? '13px' : '14px' }}
+              />
             </button>
             {/* Add other actions as needed, e.g., wishlist, compare */}
           </div>
@@ -264,14 +265,13 @@ export default function ProductCard(props) {
     ],
   };
 
-  const handleForward=()=>{
-    sld.current.slickNext()
-  }
-  
-  const handleBackward=()=>{
-  sld.current.slickPrev()
-  }
+  const handleForward = () => {
+    sld.current.slickNext();
+  };
 
+  const handleBackward = () => {
+    sld.current.slickPrev();
+  };
 
   return (
     <div style={{ width: '95%', position: 'relative' }}>
@@ -297,13 +297,15 @@ export default function ProductCard(props) {
           background: '#95a5a6',
           opacity: 0.6,
           zIndex: 1,
-          cursor: 'pointer'
+          cursor: 'pointer',
         }}
       >
         {<ArrowBackIosIcon onClick={handleForward} />}
       </div>
       <div>
-        <Slider ref={sld} {...settings}>{productDetail()}</Slider>
+        <Slider ref={sld} {...settings}>
+          {productDetail()}
+        </Slider>
       </div>
       <div
         style={{
@@ -319,7 +321,7 @@ export default function ProductCard(props) {
           background: '#95a5a6',
           opacity: 0.6,
           zIndex: 1,
-          cursor: 'pointer'
+          cursor: 'pointer',
         }}
       >
         {<ArrowForwardIosIcon onClick={handleBackward} />}

@@ -7,15 +7,12 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { createRef } from 'react';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import  {useTheme}  from '@mui/material/styles';
-import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 
 export default function SliderComponent(props) {
   var sld=createRef()
   var theme=useTheme();
-  const matchesMd = useMediaQuery(theme.breakpoints.down('md'));
   const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
-  const matchesXS = useMediaQuery(theme.breakpoints.down('xs'));
 
   var banners = props?.data || {}
   var images = Object.values(banners)[0]?.picture?.split(',');
@@ -25,6 +22,7 @@ export default function SliderComponent(props) {
         
         <div key={i}>
           <img
+            alt={`Banner slide ${i}`}
             src={`${serverURL}/images/${item}`}
             style={{
                 width: "95%",

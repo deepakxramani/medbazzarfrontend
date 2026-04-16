@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function ShowCartProducts(props) {
   var navigate = useNavigate();
-  var { cart: products, cartKeys: keys, cartItems: productsList } = useAuth();
+  var { cartKeys: keys, cartItems: productsList } = useAuth();
 
   const showProducts = () => {
     return productsList?.map((item) => {

@@ -125,12 +125,12 @@ export default function DisplayAllSubCategory(){
             showCancelButton: true,
             confirmButtonText: "Delete",
             denyButtonText: `Don't Delete`
-          }).then(async(result) => {
+          }).then(async(swalResult) => {
             /* Read more about isConfirmed, isDenied below */
-            if (result.isConfirmed) {
+            if (swalResult.isConfirmed) {
               var body={subcategoryid:rowData.subcategoryid}
-              var result=await postData('subcategory/delete_subcategory_data',body)
-              if (result.status)
+              var deleteResult=await postData('subcategory/delete_subcategory_data',body)
+              if (deleteResult.status)
               {
               Swal.fire({toast:true,title:"Deleted",icon:"success"})
               fetchAllSubCategory()
@@ -139,7 +139,7 @@ export default function DisplayAllSubCategory(){
               {
               Swal.fire({toast:true,title:" Fail to Delete Record",icon:"error"});
               }
-            } else if (result.isDenied) {
+            } else if (swalResult.isDenied) {
               Swal.fire({toast:true,title:"Your Record is safe",  icon:"info"});
             }
           });
@@ -233,7 +233,7 @@ export default function DisplayAllSubCategory(){
               { title: 'SubCategory ID', field: 'subcategoryid' },
               { title: 'Category', field: 'categoryname' },
               { title: 'Subcategory Name', field: 'subcategoryname' },
-              { title: 'Icon' ,  field:'picture' ,render:(rowData)=><><img src={`${serverURL}/images/${rowData.picture}`} style={{width:60,height:60,borderRadius:30}}/> </>}
+              { title: 'Icon' ,  field:'picture' ,render:(rowData)=><><img src={`${serverURL}/images/${rowData.picture}`} alt={rowData.subcategoryname} style={{width:60,height:60,borderRadius:30}}/> </>}
             
             ]}
             data={subCategoryData}

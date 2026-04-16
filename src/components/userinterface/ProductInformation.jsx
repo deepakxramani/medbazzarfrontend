@@ -1,7 +1,5 @@
 import { Grid, Button } from '@mui/material';
-import { serverURL } from '../../services/FetchNodeServices';
-import { createRef } from 'react';
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
@@ -9,21 +7,18 @@ import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined';
 import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
 import Divider from '@mui/material/Divider';
 import WatchLaterIcon from '@mui/icons-material/WatchLater';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import parse from 'html-react-parser';
 import { useAuth } from '../../context/AuthContext';
 import PlusMinusComp3 from './PlusMinusComp3';
 
 export default function ProductInformation(props) {
-  var sld = createRef();
   var navigate = useNavigate();
   var { addToCart, removeFromCart, cart: productFromRedux } = useAuth();
 
   var theme = useTheme();
   const matchesMd = useMediaQuery(theme.breakpoints.down('md'));
   const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
-  const matchesXS = useMediaQuery(theme.breakpoints.down('xs'));
 
 
   var values = Object.values(productFromRedux);
@@ -41,7 +36,7 @@ export default function ProductInformation(props) {
   //     alert(JSON.stringify(prd))
   // }
 
-  if (values?.length == 0) {
+  if (values?.length === 0) {
     product = props?.item;
     product['qty'] = 0;
   } else {
@@ -177,12 +172,12 @@ export default function ProductInformation(props) {
             <div>
               <h2>
                 ₹
-                {product?.offerprice != 0
+                {product?.offerprice !== 0
                   ? product?.offerprice
                   : product?.price}
               </h2>
             </div>
-            {product?.offerprice == 0 ? (
+            {product?.offerprice === 0 ? (
               <div></div>
             ) : (
               <div>

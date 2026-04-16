@@ -8,29 +8,23 @@ export function RootReducer(state = initialState, action) {
   switch (action.type) {
     case 'ADD_USER':
       state.user[action.payload[0]] = action.payload[1];
-      // console.log(state.data)
       localStorage.setItem('user-data', state.user);
       return { data: state.data, user: state.user };
 
     case 'ADD_PRODUCT':
       state.data[action.payload[0]] = action.payload[1];
-      // console.log(state.data)
       // Cookies.set("CART",JSON.stringify(state.data), { expires: 7 })
-      // console.log(Cookies.get("CART"))
       localStorage.setItem('cart-products', JSON.stringify(state.data));
 
       return { data: state.data, user: state.user };
 
     case 'EDIT_EMPLOYEE':
       state.data[action.payload[0]] = action.payload[1];
-      // console.log(state.data)
       return { data: state.data, user: state.user };
 
     case 'DELETE_PRODUCT':
       delete state.data[action.payload[0]];
-      // console.log(state.data)
       Cookies.set('CART', JSON.stringify(state.data), { expires: 7 });
-      // console.log(Cookies.get("CART"))
       return { data: state.data, user: state.user };
 
     default:

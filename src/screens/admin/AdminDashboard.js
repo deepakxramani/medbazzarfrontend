@@ -24,7 +24,7 @@ import DisplayAllProductDetails from './DisplayAllProductDetails';
 import Concern from './Concern';
 import Banners from './Banners';
 import DisplayAllConcerns from './DisplayAllConcern';
-import logo2 from '../../assets/logo2.png'
+
 
 //import Summary from "./Summary";
 //import Chart from "../../components/DashboardComponent/Chart";

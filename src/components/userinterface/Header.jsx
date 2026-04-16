@@ -334,7 +334,6 @@ export default function Header(props) {
   const theme = useTheme();
 
   const {
-    cart,
     cartKeys: keys,
     displayName: userData,
     userData: userInformation,

@@ -1,12 +1,11 @@
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { serverURL, getData, postData } from '../../services/FetchNodeServices';
+import { serverURL } from '../../services/FetchNodeServices';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import Paper from '@mui/material/Paper';
 import { createRef } from 'react';
-import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
@@ -19,7 +18,6 @@ export default function BrandsSliderComponent(props) {
   const theme = useTheme();
   const matchesMd = useMediaQuery(theme.breakpoints.down('md'));
   const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
-  const matchesXS = useMediaQuery(theme.breakpoints.down('xs'));
 
   const showSlide = () => {
     return brands?.map((item, i) => {
@@ -35,6 +33,7 @@ export default function BrandsSliderComponent(props) {
           >
             <img
               src={`${serverURL}/images/${item.brandicon}`}
+              alt={item.brandname || 'Brand'}
               style={{
                 width: matchesMd ? '90%' : '80%',
                 height: 'auto',

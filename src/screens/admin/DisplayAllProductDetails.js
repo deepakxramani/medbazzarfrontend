@@ -10,7 +10,6 @@ import DialogContent from '@mui/material/DialogContent';
 import { Button, Grid, Avatar, TextField } from '@mui/material';
 import { FormControl, MenuItem, Select, InputLabel } from '@mui/material';
 import Swal from 'sweetalert2';
-import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import mainLogo from '../../../src/assets/logo2.png';
 import ClearIcon from '@mui/icons-material/Clear';
@@ -33,7 +32,7 @@ export default function DisplayAllProductDetails() {
   const [subCategoryList, setSubCategoryList] = useState([]);
   const [brandList, setBrandList] = useState([]);
   const [productList, setProductList] = useState([]);
-  const [product, setProduct] = useState('');
+  const [, setProduct] = useState('');
   const [productSubName, setProductSubName] = useState('');
   const [weight, setWeight] = useState('');
   const [weightType, setWeightType] = useState('');
@@ -288,15 +287,15 @@ export default function DisplayAllProductDetails() {
       showCancelButton: true,
       confirmButtonText: 'Delete',
       denyButtonText: `Don't Delete`,
-    }).then(async (result) => {
+    }).then(async (swalResult) => {
       /* Read more about isConfirmed, isDenied below */
-      if (result.isConfirmed) {
+      if (swalResult.isConfirmed) {
         var body = { productdetailid: rowData.productdetailid };
-        var result = await postData(
+        var deleteResult = await postData(
           'productdetails/delete_product_details_data',
           body,
         );
-        if (result.status) {
+        if (deleteResult.status) {
           Swal.fire({
             toast: true,
             title: 'Product Deleted!',
@@ -310,7 +309,7 @@ export default function DisplayAllProductDetails() {
             icon: 'error',
           });
         }
-      } else if (result.isDenied) {
+      } else if (swalResult.isDenied) {
         Swal.fire({ toast: true, title: 'Your Record is safe', icon: 'info' });
       }
     });
@@ -890,6 +889,7 @@ export default function DisplayAllProductDetails() {
               <>
                 <img
                   src={`${serverURL}/images/${rowData.picture.split(',').pop()}`}
+                  alt={rowData.productsubname || 'Product'}
                   style={{ width: 60, height: 60, borderRadius: 30 }}
                 />
               </>

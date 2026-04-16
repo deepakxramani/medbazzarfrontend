@@ -1,11 +1,9 @@
-import { Button, IconButton } from '@mui/material';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { useEffect, useState } from 'react';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
-import Swal from 'sweetalert2';
 import toast from 'react-hot-toast';
 
 export default function PlusMinusComp2(props) {
@@ -41,7 +39,7 @@ export default function PlusMinusComp2(props) {
 
   return (
     <div style={{ display: 'flex' }}>
-      {value == 0 ? (
+      {value === 0 ? (
         <div className='product-actions' style={{ padding: 0 }}>
           <button
             style={{
