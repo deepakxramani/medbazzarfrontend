@@ -8,7 +8,7 @@ import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
 export default function UserInfoProfile() {
-  var { userData, logoutUser } = useAuth();
+  var { userData, logoutUser, updateUser, updateUserPicture } = useAuth();
   const navigate = useNavigate();
 
   const [username, setUsername] = useState(userData?.username);
@@ -22,7 +22,7 @@ export default function UserInfoProfile() {
   const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
 
   const getUserData = useCallback(async () => {
-    var body = { mobileno: mobileno };
+    var body = { email: emailid };
     var result = await postData('users/check_userdata', body);
     if (result.status) {
       const userDataFromServer = result.data;
@@ -31,7 +31,7 @@ export default function UserInfoProfile() {
         bytes: '',
       });
     }
-  }, [mobileno]);
+  }, [emailid]);
 
   useEffect(() => {
     getUserData();
@@ -69,6 +69,9 @@ export default function UserInfoProfile() {
     var result = await postData('users/edit_user_data', body);
 
     if (result.status) {
+      // Update context → auto-syncs to localStorage → re-renders all components
+      updateUser({ username, mobileno, emailid, address });
+      setBtnStatus(true);
       toast.success('Details updated successfully!');
     }
   };
@@ -81,11 +84,15 @@ export default function UserInfoProfile() {
 
       var formData = new FormData();
       formData.append('mobileno', mobileno);
+      formData.append('email', emailid);
       formData.append('picture', file);
 
       var result = await postData('users/edit_user_picture', formData);
 
       if (result.status) {
+        // Update context with new picture filename → auto-syncs everywhere
+        const newPictureName = result.data?.picture || file.name;
+        updateUserPicture(newPictureName);
         toast.success('Profile picture updated successfully!');
       } else {
         toast.error('Something went wrong!');

@@ -16,11 +16,11 @@ export default function ProductCart() {
   var { cart: products, userData } = useAuth();
 
   const check_user_address = useCallback(async () => {
-    if (userData?.mobileno === undefined) {
+    if (userData?.email === undefined) {
       setStatus(false);
     } else {
       var result = await postData('users/check_user_address', {
-        mobileno: userData?.mobileno,
+        email: userData?.email,
       });
       if (result.status === false) {
         setStatus(true);
@@ -29,7 +29,7 @@ export default function ProductCart() {
         setUserAddress(result.data);
       }
     }
-  }, [userData?.mobileno]);
+  }, [userData?.email]);
 
   useEffect(
     function () {

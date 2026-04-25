@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useCallback,
+} from 'react';
 
 interface UserData {
   username?: string;
@@ -26,13 +32,19 @@ const safeParseJSON = (key, fallback = {}) => {
 // ─── Provider ─────────────────────────────────────────────────────────────────
 export function AuthProvider({ children }) {
   // ── User State ──────────────────────────────────────────────────────────────
-  const [user, setUserState] = useState(() => safeParseJSON(STORAGE_KEYS.USER, {}));
+  const [user, setUserState] = useState(() =>
+    safeParseJSON(STORAGE_KEYS.USER, {}),
+  );
 
   // ── Admin State ─────────────────────────────────────────────────────────────
-  const [admin, setAdminState] = useState(() => safeParseJSON(STORAGE_KEYS.ADMIN, null));
+  const [admin, setAdminState] = useState(() =>
+    safeParseJSON(STORAGE_KEYS.ADMIN, null),
+  );
 
   // ── Cart State ──────────────────────────────────────────────────────────────
-  const [cart, setCartState] = useState(() => safeParseJSON(STORAGE_KEYS.CART, {}));
+  const [cart, setCartState] = useState(() =>
+    safeParseJSON(STORAGE_KEYS.CART, {}),
+  );
 
   // ── Persist user to localStorage whenever it changes ────────────────────────
   useEffect(() => {
@@ -55,9 +67,29 @@ export function AuthProvider({ children }) {
 
   // ── User Actions ────────────────────────────────────────────────────────────
 
-  /** Login / register: save user details keyed by mobileno */
-  const loginUser = useCallback((mobileno, userData) => {
-    setUserState((prev) => ({ ...prev, [mobileno]: userData }));
+  /** Login / register: save user details keyed by email */
+  const loginUser = useCallback((email: any, userData: any) => {
+    setUserState((prev: any) => ({ ...prev, [email]: userData }));
+  }, []);
+
+  /** Update user: merge partial updates into existing user data */
+  const updateUser = useCallback((updates: any) => {
+    setUserState((prev: any) => {
+      const entries = Object.entries(prev);
+      if (entries.length === 0) return prev;
+      const [key, existing] = entries[0] as [string, any];
+      return { ...prev, [key]: { ...existing, ...updates } };
+    });
+  }, []);
+
+  /** Update user picture path in context */
+  const updateUserPicture = useCallback((picturePath: string) => {
+    setUserState((prev: any) => {
+      const entries = Object.entries(prev);
+      if (entries.length === 0) return prev;
+      const [key, existing] = entries[0] as [string, any];
+      return { ...prev, [key]: { ...existing, picture: picturePath } };
+    });
   }, []);
 
   /** Logout: clear all user data */
@@ -130,6 +162,8 @@ export function AuthProvider({ children }) {
     userData,
     displayName,
     loginUser,
+    updateUser,
+    updateUserPicture,
     logoutUser,
 
     // admin

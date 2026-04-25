@@ -1,8 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
-import cartReducer from './cartSlice';
+import cartReducer from '../slices/cartSlice';
+import otpReducer from '../slices/otpSlice';
 
 export const store = configureStore({
-  reducer: cartReducer,
+  reducer: {
+    cart: cartReducer,
+    otp: otpReducer,
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;
