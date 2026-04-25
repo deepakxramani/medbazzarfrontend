@@ -1,19 +1,17 @@
 import * as React from 'react';
 import {
   Accordion,
+  Grid,
   Divider,
+  MenuItem,
   Paper,
   InputBase,
   IconButton,
-  Box,
-  Typography,
-  List,
-  ListItemText,
-  ListItemButton
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { getData, postData } from '../../services/FetchNodeServices';
 import { useState, useEffect } from 'react';
@@ -21,11 +19,12 @@ import { useState, useEffect } from 'react';
 export default function FilterComp() {
   const [category, setCategory] = useState([]);
   const [subCategory, setSubCategory] = useState([]);
-  const [expanded, setExpanded] = useState<string | false>(false);
 
   const fetchAllCategory = async () => {
     var result = await getData('userinterface/display_all_category');
+    // console.log('DAAATTAAA',result.data)
     if (result.status) {
+      console.log('CATEGORY DATA', result.data);
       setCategory(result.data);
     }
   };
@@ -36,6 +35,7 @@ export default function FilterComp() {
       { categoryid: categoryid },
     );
     if (result.status) {
+      console.log('SUB-CATEGORY DATA', result.data);
       setSubCategory(result.data);
     }
   };
@@ -44,71 +44,43 @@ export default function FilterComp() {
     fetchAllCategory();
   }, []);
 
-  const handleAccordionChange = (panel: string, categoryid: any) => (event: React.SyntheticEvent, isExpanded: boolean) => {
-    setExpanded(isExpanded ? panel : false);
-    if (isExpanded) {
-      fetchAllSubCategory(categoryid);
-    }
+  const handleSubCategory = (categoryid, event) => {
+    fetchAllSubCategory(categoryid);
   };
 
-  const showAllSubCategory = () => {
-    return subCategory?.map((item, index) => {
+  const showAllCategory = () => {
+    return category?.map((item) => {
       return (
-        <ListItemButton 
-          key={index}
-          sx={{ 
-            borderRadius: 2, 
-            mb: 0.5,
-            '&:hover': { bgcolor: 'rgba(0,57,28,0.04)' }
+        <Accordion
+          style={{
+            width: '100%',
+            background: '#F5F5F5',
+            boxShadow: '0 0 0 #F5F5F5',
+            fontSize: 12,
           }}
         >
-          <ListItemText 
-            primary={item.subcategoryname} 
-            primaryTypographyProps={{ fontSize: '0.9rem', color: 'text.secondary' }} 
-          />
-        </ListItemButton>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon style={{ marginLeft: 'auto' }} />}
+            onClick={(event) => handleSubCategory(item.categoryid, event)}
+            aria-controls='panel1-content'
+            id='panel1-header'
+          >
+            <Typography>{item.categoryname}</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>{showAllSubCategory()}</Typography>
+          </AccordionDetails>
+        </Accordion>
       );
     });
   };
 
-  const showAllCategory = () => {
-    return category?.map((item: any, index: number) => {
-      const panelId = `panel${index}`;
+  const showAllSubCategory = () => {
+    return subCategory?.map((item) => {
       return (
-        <Accordion
-          key={index}
-          expanded={expanded === panelId}
-          onChange={handleAccordionChange(panelId, item.categoryid)}
-          disableGutters
-          elevation={0}
-          sx={{
-            background: 'transparent',
-            '&:before': { display: 'none' },
-            borderBottom: '1px solid #f0f0f0',
-            '&:last-child': { borderBottom: 0 }
-          }}
-        >
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon sx={{ color: expanded === panelId ? '#00391c' : 'action.active' }} />}
-            sx={{ px: 1, '& .MuiAccordionSummary-content': { my: 1.5 } }}
-          >
-            <Typography 
-              sx={{ 
-                fontFamily: 'Kanit', 
-                fontSize: '1.05rem',
-                color: expanded === panelId ? '#00391c' : '#333',
-                fontWeight: expanded === panelId ? 600 : 400
-              }}
-            >
-              {item.categoryname}
-            </Typography>
-          </AccordionSummary>
-          <AccordionDetails sx={{ p: 0, pb: 1, px: 0.5 }}>
-            <List disablePadding>
-              {showAllSubCategory()}
-            </List>
-          </AccordionDetails>
-        </Accordion>
+        <MenuItem style={{ background: '#F5F5F5', fontSize: 15 }}>
+          {item.subcategoryname}{' '}
+        </MenuItem>
       );
     });
   };
@@ -116,68 +88,99 @@ export default function FilterComp() {
   const searchBarComponent = () => {
     return (
       <Paper
-        elevation={0}
         component='form'
         sx={{
           p: '2px 4px',
+          margin: 1,
           display: 'flex',
+          border: '1px solid #A5AFBF',
+          fontWeight: 'bold',
+          borderRadius: 50,
+          height: 25,
           alignItems: 'center',
-          width: '100%',
-          bgcolor: '#f8faf9',
-          border: '1px solid #e0e0e0',
-          borderRadius: 8,
-          transition: 'all 0.2s',
-          '&:focus-within': {
-            borderColor: '#00391c',
-            boxShadow: '0 0 0 2px rgba(0,57,28,0.1)'
-          }
+          width: '92%',
+          background: '#ffff',
+          opacity: 0.5,
         }}
       >
         <InputBase
-          sx={{ ml: 2, flex: 1, fontSize: '0.95rem', fontFamily: 'Kanit' }}
-          placeholder='Search Categories...'
-          inputProps={{ 'aria-label': 'search categories' }}
+          sx={{ ml: 1, flex: 1 }}
+          placeholder='Search Brands..'
+          inputProps={{ 'aria-label': 'search google maps' }}
+          style={{ color: '#0D0F11' }}
         />
-        <IconButton type='button' sx={{ p: '10px', color: '#00391c' }} aria-label='search'>
-          <SearchIcon />
+        <IconButton type='button' sx={{ p: '10px' }} aria-label='search'>
+          <SearchIcon style={{ color: 'black' }} />
         </IconButton>
       </Paper>
     );
   };
 
   return (
-    <Paper
-      elevation={0}
-      sx={{
-        width: '100%',
-        minWidth: 260,
-        borderRadius: 4,
-        overflow: 'hidden',
-        border: '1px solid #eef0f2',
-        boxShadow: '0 8px 32px rgba(0,0,0,0.04)',
-        bgcolor: '#fff'
-      }}
-    >
-      <Box sx={{ p: 3, borderBottom: '1px solid #f0f0f0', bgcolor: '#fafcfb' }}>
-        <Typography variant="h6" sx={{ fontFamily: 'Kanit', fontWeight: 800, color: '#00391c' }}>
-          Filters
-        </Typography>
-      </Box>
-
-      <Box sx={{ p: 3 }}>
-        <Typography 
-          variant="subtitle2" 
-          sx={{ mb: 2, color: 'text.secondary', fontWeight: 600, textTransform: 'uppercase', letterSpacing: 1 }}
+    <div>
+      <Grid container style={{ display: 'flex', flexDirection: 'column' }}>
+        <Grid
+          item
+          style={{
+            width: '100%',
+            maxWidth: 350,
+            height: 'auto',
+            background: '#f1f2f6',
+            marginLeft: 20,
+            marginTop: 20,
+            borderRadius: 10,
+            boxShadow: '0px 0px 5px 2px rgba(0,0,0,0.2)',
+          }}
         >
-          Categories
-        </Typography>
-        
-        {searchBarComponent()}
+          <div>
+            <p style={{ fontWeight: 500, padding: '15px 15px' }}>FILTERS</p>
+            <Divider
+              style={{
+                background: '#A0ABBB',
+                width: '92%',
+                height: 2,
+                margin: '5px auto',
+                opacity: 0.3,
+              }}
+            />
+          </div>
+          <div>
+            <p
+              style={{
+                color: '#4b5768',
+                fontSize: 15,
+                fontWeight: 600,
+                marginLeft: 15,
+              }}
+            >
+              Category
+            </p>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'column',
+                marginTop: 10,
+              }}
+            >
+              {searchBarComponent()}
 
-        <Box sx={{ mt: 2 }}>
-          {showAllCategory()}
-        </Box>
-      </Box>
-    </Paper>
+              <div
+                style={{
+                  marginTop: 10,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  width: '100%',
+                  fontWeight: 'lighter',
+                }}
+              >
+                {showAllCategory()}
+              </div>
+            </div>
+          </div>
+        </Grid>
+      </Grid>
+    </div>
   );
 }

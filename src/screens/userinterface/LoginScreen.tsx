@@ -1,52 +1,52 @@
 import LogInImage from '../../components/userinterface/LogInImage';
 import LogInOTP from '../../components/userinterface/LoginOTP';
-import { Grid, Box, useTheme, useMediaQuery, Container } from '@mui/material';
+import { Grid } from '@mui/material';
+import { useTheme } from '@mui/material';
+import { useMediaQuery } from '@mui/material';
 import Header from '../../components/userinterface/Header';
 
 export default function LogInScreen() {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down('md'));
+  const matchesMdUp = useMediaQuery(theme.breakpoints.up('md'));
 
   return (
-    <Box sx={{ minHeight: '100vh', backgroundColor: '#f4f7f6', display: 'flex', flexDirection: 'column' }}>
-      <Header position="sticky" />
-      
-      <Container 
-        maxWidth="lg" 
-        sx={{ 
-          flexGrow: 1, 
-          display: 'flex', 
-          alignItems: 'center', 
-          justifyContent: 'center', 
-          py: { xs: 4, md: 8 }
+    <Grid container spacing={1}>
+      <Header />
+      <Grid
+        item
+        xs={12}
+        style={{
+          marginTop: 60,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
       >
-        <Grid 
-          container 
-          spacing={4} 
-          alignItems="center" 
-          justifyContent="center"
-        >
-          {!matches && (
-            <Grid item xs={12} md={6}>
-              <Box 
-                sx={{ 
-                  display: 'flex', 
-                  justifyContent: 'center', 
-                  alignItems: 'center',
-                  p: 2
-                }}
-              >
-                <LogInImage />
-              </Box>
-            </Grid>
+        <Grid md={6} item>
+          {!matches ? (
+            <div>
+              <LogInImage />
+            </div>
+          ) : (
+            <div></div>
           )}
-
-          <Grid item xs={12} md={6} display="flex" justifyContent="center">
-            <LogInOTP />
-          </Grid>
         </Grid>
-      </Container>
-    </Box>
+
+        <Grid
+          item
+          xs={12}
+          md={6}
+          style={{
+            marginTop: matchesMdUp ? 60 : 120,
+            marginRight: 10,
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
+          <LogInOTP />
+        </Grid>
+      </Grid>
+    </Grid>
   );
 }

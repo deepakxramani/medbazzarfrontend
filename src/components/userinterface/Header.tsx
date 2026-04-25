@@ -25,7 +25,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import { useEffect, useState } from 'react';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { postData, serverURL } from '../../services/FetchNodeServices';
 import { useAuth } from '../../context/AuthContext';
 import ShowCartProducts from '../userinterface/ShowCartProducts';
@@ -337,7 +337,6 @@ function MobileSearchBar({
 export default function Header(props) {
   const navigate = useNavigate();
   const theme = useTheme();
-  const { pathname } = useLocation();
 
   const {
     cartKeys: keys,
@@ -358,9 +357,9 @@ export default function Header(props) {
 
   useEffect(() => {
     const fetchPicture = async () => {
-      if (!userInformation?.emailid) return;
+      if (!userInformation?.mobileno) return;
       const result = await postData('users/check_userdata', {
-        email: userInformation.emailid,
+        mobileno: userInformation.mobileno,
       });
       if (result.status) {
         setPicture({
@@ -370,7 +369,7 @@ export default function Header(props) {
       }
     };
     fetchPicture();
-  }, [userInformation?.emailid, userInformation, userData]);
+  }, [userInformation?.mobileno, userInformation, userData]);
 
   return (
     <Box
@@ -469,7 +468,7 @@ export default function Header(props) {
       </AppBar>
 
       {/* Mobile Secondary Search AppBar */}
-      {matches && !pathname.match('/loginscreen') && (
+      {matches && (
         <MobileSearchBar
           marginTop={props.marginTop}
           position={props.position}
