@@ -17,7 +17,7 @@ export default function GetOTP(props) {
       loginUser(props?.mobileno, props?.userData);
       navigate('/productcart');
     } else {
-      alert('Invalid otp.....');
+      alert('Invalid otp......');
     }
   };
 
